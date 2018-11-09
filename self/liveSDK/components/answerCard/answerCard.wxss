@@ -1,0 +1,218 @@
+/* components/answerCard/answerCard.wxss */
+.ans-card {
+	width: 630rpx;
+	/*height: 410rpx;*/
+	height: auto;
+	background-color: #fff;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -205rpx;
+	margin-left: -310rpx;
+	z-index: 999;
+}
+.ans-title {
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 30rpx;
+	color: #0078d7;
+	padding-left: 20rpx;
+}
+.subRight {
+	float: right;
+	color: #666;
+	line-height:40rpx;
+	padding-right:20rpx;
+}
+.closeCard {
+	width: 24rpx;
+	height: 22rpx;
+	line-height: 22rpx;
+	padding: 10rpx;
+	position: absolute;
+	top: 18rpx;
+	right: 18rpx;
+}
+.closeCard2 {
+	width: 26rpx;
+	height: 26rpx;
+	line-height: 26rpx;
+	padding: 10rpx;
+	position: absolute;
+	top: 18rpx;
+	right: 18rpx;
+}
+.ans-subtit {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 20rpx;
+	color: #ff665d;
+	padding-left: 20rpx;
+	background-color: #ffe7e6;
+	border-top: 1px solid #e7e7e7;
+}
+.ans-main {
+	height: 290rpx;
+	background-color: #ffffff;
+	margin-top: 60rpx;
+}
+.ans-choose {
+	padding: 0 16rpx;
+	display: flex;
+}
+.choose-item {
+	flex: 1;
+}
+.item-view {
+	width: 70rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #666666;
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+	border-radius: 10rpx;
+	position: relative;
+	font-size: 30rpx;
+}
+.item-multi {
+	width: 44rpx;
+	height: 44rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.item-judeg {
+	width: 30rpx;
+	height: 30rpx;
+	margin: 20rpx auto 0 auto;
+}
+.item-active {
+	border: 1px solid #0078d7;
+}
+.ans-submit {
+	width: 218rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	background-color: #0078d7;
+	color: #ffffff;
+	font-size: 26rpx;
+	margin: 56rpx auto 0 auto;
+	border-radius: 60rpx;
+}
+
+.ans-rusult {
+	height: auto;
+	background-color: #ffffff;
+	padding: 26rpx 30rpx;
+	position: relative;
+}
+.result-item {
+	width: 100%;
+	height: 28rpx;
+	line-height: 28rpx;
+    display: flex;
+    margin-top: 16rpx;
+}
+.res-sure {
+	font-size: 22rpx;
+	height: 28rpx;
+	width: 52rpx;
+	line-height: 28rpx;
+    padding: 0 2px;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.res-sureBg {
+	background-color: #0078d7;
+}
+.res-label {
+	padding: 0 10rpx;
+    text-align: center;
+	font-size: 22rpx;
+	color: #333;
+	overflow: hidden;
+}
+.res-main {
+	flex: 1.0;
+	padding-top: 4rpx;
+}
+.res-out {
+    border: 1px solid #dedddd;
+    border-radius: 16rpx;
+    background-clip: padding-box;
+    background-color: #f4f4f4;
+    height: 16rpx;
+    font-size: 0;
+    line-height: 16rpx;
+    position: relative;
+}
+.res-in {
+    position: absolute;
+    height: 16rpx;
+    left: 0;
+    font-size: 0;
+    line-height: 16rpx;
+    border-radius: 16rpx;
+    background-color: #ff7a72;
+}
+
+.res-num {
+	width: 60rpx;
+    text-align: right;
+    font-size: 22rpx;
+    line-height: 22rpx;
+    overflow: hidden;
+}
+.res-percent {
+	width: 80rpx;
+    text-align: right;
+    font-size: 22rpx;
+    line-height: 22rpx;
+    overflow: hidden;
+}
+
+.res-bottom {
+	font-size: 30rpx;
+	text-align: center;
+	height: 50rpx;
+	line-height: 50rpx;
+	margin: 30rpx 0;
+}
+.res-right {
+	color: #ff665d;
+}
+.res-fail {
+	color: #999;
+}
+.res-bottomImg {
+	width: 44rpx;
+	height: 44rpx;
+	display: inline-block;
+	margin-right: 16rpx;
+	margin-top: -6rpx;
+	vertical-align:middle;
+}
+
+.rightImage {
+	width: 66rpx;
+	height: 74rpx;
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+
+.hover {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	opacity: 0.5;
+	z-index: 100
+}

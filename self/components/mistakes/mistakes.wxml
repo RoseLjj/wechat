@@ -1,0 +1,4 @@
+<!--components/mistakes/mistakes.wxml-->
+<view class='mistakes-question'>
+  <button bindtap='goCollection'>收藏集</button>
+</view>

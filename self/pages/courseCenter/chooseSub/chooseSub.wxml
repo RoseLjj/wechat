@@ -1,0 +1,42 @@
+<!--pages/courseCenter/chooseSub/chooseSub.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+  <!-- 科目 -->
+  <view class="list">
+    <view class='listBox'>
+      <block wx:for="{{content}}" wx:key="{{index}}">
+        <view class='listView' data-index='{{item.id}}' bindtap='choosrSubject'>
+          <view class='item nameView'>
+            <text class='title'>{{item.name}}</text>
+          </view>
+
+          <view class='item titleView'>
+            <view class='chooseType1'>{{item.title}}</view>
+          </view>
+
+          <view class='item numView'>
+            <text class='moneyViewItem'>{{item.num}}</text>
+
+          </view>
+
+        </view>
+      </block>
+    </view>
+    <view class='listBtn'>
+      <button bindtap='questionnaire'>智能选课</button>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>

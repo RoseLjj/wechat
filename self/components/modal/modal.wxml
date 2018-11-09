@@ -1,0 +1,16 @@
+<!--components/modal/modal.wxml-->
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-tips">
+    <image class="tishi" src='{{bgcImg[0]}}'></image>
+  </view>
+  <image class="modal-close" src='{{bgcImg[1]}}' bindtap='hideModal'></image>
+  <view class="modal-content">
+    <view class="modal-title">{{modalMeesage}}</view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">{{modalConfirm}}</view>
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">{{modalCancel}}</view>
+  </view>
+</view>

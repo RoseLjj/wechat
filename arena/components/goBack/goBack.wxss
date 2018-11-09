@@ -1,0 +1,2 @@
+/* components/goBack/goBack.wxss */
+@import '../../app.wxss';

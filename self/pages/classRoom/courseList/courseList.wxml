@@ -1,0 +1,287 @@
+<!--pages/classRoom/courseList/courseList.wxml-->
+<!-- 背景图片 -->
+<view>
+  <image src='{{bgcImg[0]}}' class="backgroundImage"></image>
+</view>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+
+  <!-- 今日课程 -->
+  <view class="continue-questions" bindtap='calendarAction'>
+    <view>今日课程</view>
+    <image class='jtxia' hidden='{{xia_flag}}' src='../../../image/icon/jtxia1@2x.png'></image>
+    <image class='jtxia' hidden='{{shang_flag}}' src='../../../image/icon/jtshang1@2x.png'></image>
+  </view>
+
+
+  <!-- 列表 -->
+  <view>
+    <view class="select-course-list">
+      <scroll-view class='course-list-box' scroll-y scroll-with-animation>
+        <!-- <view class="subject-list" wx:for="{{courseListArr}}" wx:key="{{index}}" bindtap='queryItemClick' data-index="{{index}}">  -->
+        <block wx:for="{{courseListArr}}" wx:key="{{index}}">
+          <!-- 课程样式 -->
+          <view class='kechengbg'>
+            <view class='horizontal'>
+              <text class='kecheng_title'>{{item.subject_name+" — "+item.subject_type_name}} </text>
+              <text class='kecheng_fu_title'> {{item.curriculum==1?"小班课":"1v1"}} | {{item.is_mianshou==1?"面授":"线上"}}</text>
+            </view>
+            <text class='content_text'>课程名称：{{item.class_name}}</text>
+            <text class='content_text_no_martop'>课程简介：{{item.introduce}}</text>
+            <view class='horizontal'>
+              <text class='content_text_no_martop'> 学习进度：</text>
+              <progress class='progress_classs' percent='{{item.schedule}}' stroke-width='8' activeColor='#1ADAAF' backgroundColor='#FFFFFF' active='true'></progress>
+              <text class='progress_text'>{{item.schedule}}%</text>
+              <text class='kecheng_jindu'>{{item.use_hour}}/{{item.total_hour}}</text>
+            </view>
+          </view>
+
+          <block wx:for="{{item.class_item}}" wx:key="{{index}}" wx:for-item="model">
+            <!-- 课时样式 -->
+            <view class='keshibg' bindtap='intoClassRoomClick' data-item='{{item}}' data-model='{{model}}'>
+              <view class='vertical'>
+                <text class='keshi_title'>{{model.class_hour_name}} ( {{model.subject_type_name}} — {{model.difficulty_level}} ）</text>
+                <text class='keshi_time'>上课时间：{{model.class_start_time}} - {{model.class_end_time}}</text>
+                <view class='horizontal'>
+                  <!--作业  -->
+                  <view hidden='{{model.status==2?false:true}}' class='horizontal_read'>
+                    <view class='green_btn_no_mar_left' bindtap='zuoyeClick' data-item='{{item}}' data-model='{{model}}'>作业</view>
+                    <view hidden='{{model.is_task==1?false:true}}' class='read_view'></view>
+                  </view>
+                  <!--报告/评价  -->
+                  <view hidden='{{model.status==2?false:true}}' class='horizontal_read'>
+                    <view class='green_btn' bindtap='baogaoClick' data-item='{{item}}' data-model='{{model}}'>报告/评价</view>
+                    <view hidden='{{model.is_feedback==1?false:true}}' class='read_view'></view>
+                  </view>
+                  <view hidden='{{model.status==1?false:true}}' class='color_btn'>进入教室</view>
+                  <view hidden='{{model.status==0?false:true}}' class='gray_btn' bindtap='unActionClick'>未开始</view>
+                </view>
+              </view>
+              <view class='horizontal_right'>
+                <image class='state_icon' hidden='{{model.status==2?false:true}}' src='../../../image/icon/duigou@2x.png'></image>
+                <image class='state_icon' hidden='{{model.status==1?false:true}}' src='../../../image/icon/kaishi@2x.png'></image>
+                <image class='state_icon' hidden='{{model.status==0?false:true}}' src='../../../image/icon/suo2@2x.png'></image>
+                <image class='jtyou' src='../../../image/icon/jtyou3@2x.png'></image>
+              </view>
+
+            </view>
+          </block>
+
+        </block>
+
+
+
+        <!-- </view> -->
+      </scroll-view>
+    </view>
+    <view class="course-continue">
+      <image src='../../../image/icon/jianbian1@2x.png' class="jianbian"></image>
+    </view>
+  </view>
+
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>
+
+
+<!--日历背景  -->
+<view class='calendar_view' hidden='{{flagView}}'>
+  <view class='data_show_bg'>
+    <view class='date-show'>
+      <view class='lt-arrow' bindtap='lastMonth'>
+        <image src='../../../image/icon/jtyou1@2x.png' mode='aspectFit'></image>
+      </view>
+      {{year}}年{{month}}月
+      <view class='rt-arrow' bindtap='nextMonth'>
+        <image src='../../../image/icon/jtyou1@2x.png' mode='aspectFit'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='headerdata'>
+    <view wx:for='{{date}}' wx:key='{{item}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
+      <view></view>
+    </view>
+  </view>
+
+
+  <view class='date-box'>
+    <view wx:for='{{dateArr}}' wx:key='{{item}}' class='{{isToday == item.isToday ? "nowDay" : ""}}' data-myyear='{{item.myyear}}' data-mymonth='{{item.mymonth}}' data-mydate='{{item.mydate}}' data-date='{{item.isToday}}'>
+      <view class='date-head'>
+        <view bindtap='ondateClick' data-item='{{item}}'>{{item.dateNum}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+<!-- 蒙版 作业-->
+<view class="zuoyemodal-box" hidden="{{zuoyeflag}}">
+
+  <view class="zuoyemodal-body">
+
+    <view class="zuoyemodal-content">
+
+      <view class='zuoyeup'>
+        <label class='zuoyeup-title'>课后作业</label>
+      </view>
+      <view class='zuoyecolse'>
+        <image bindtap="zuoyehide" class='zuoyeup-close' src='{{closeImage}}'>
+        </image>
+      </view>
+
+      <!-- 作业上传 -->
+      <view class='zuoyeupLeftView'>
+        <label class='zuoyeupLeft-title'>作业上传</label>
+      </view>
+
+        <view class='zuoyeupLeft'>
+            <block wx:for='{{imagesArr}}' wx:key='{{index}}'>
+              <image  class='zuoyeupLeft-button' data-index='{{index}}' src='{{item}}'  mode="aspectFill" bindlongpress="deleteImage" bindtap='previewImg'></image>
+
+            </block>
+            <image src='../../../image/icon/tianjia@2x.png' class='zuoyeupload' bindtap='btnAddAction' hidden='{{imageMax == 1?true:false}}'></image>
+        </view>
+
+      <!-- 文本输入 -->
+      <view>
+        <textarea fixed class="zuoyetextarea" value="{{zuoyevalue}}" placeholder="{{zuoyeplaceholder}}" placeholder-class="zuoyeplaceholder" maxlength="{{maxlength}}" bindinput="zuoyeinputs" focus="false" auto-height="{{false}}" adjust-position="{{true}}" show-confirm-bar="{{show-confirm-bar}}" disabled='{{zuoyebuttonStat == 1?true:false}}'>
+        </textarea>
+        <text class='zuoyeshowMaxValue'>{{zuoyecurrentNumber|0}}/{{maxlength}}</text>
+      </view>
+
+      <!-- 底部按钮 -->
+      <view class='bottonView'> </view>
+      <view class='zuoyebotton' hidden='{{zuoyebuttonStat==0?false:true}}'>
+        <button bindtap='zuoyecancel' class='zuoyebutton-cancel'>取消</button>
+        <button bindtap='zuoyesubmit' class='zuoyebutton-submit'>提交</button>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+
+
+<!-- 蒙版 报告/评价  -->
+<view class="baogaomodal-box" hidden="{{baogaoflagView}}">
+
+  <view class="baogaomodal-body">
+
+    <view class="baogaomodal-content">
+
+      <view class='baogaoup'>
+        <label class='baogaoup-title'>报告</label>
+      </view>
+      <view class='baogaocolse'>
+        <image bindtap="baogaohide" class='baogaoup-close' src='{{closeImage}}'>
+        </image>
+      </view>
+      <view class='baogaoxianLienTop'></view>
+
+
+      <!--报告 五角星 -->
+      <view class="comment1-description">
+        <block wx:for='{{titleArr}}' wx:key="{{item}}">
+
+          <view class='comment1-title'>{{item.text}}</view>
+
+          <view class="star-pos" style="display:flex;flex-direction:row;">
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=1? 'on': ''}}" ></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=2? 'on': ''}}" ></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=3? 'on': ''}}" ></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=4? 'on': ''}}" ></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=5? 'on': ''}}" ></view>
+          </view>
+        </block>
+      </view>
+
+      <!-- 学习 与 授课 -->
+      <view class='baogaoxianLienBotton'></view>
+
+      <view class='baogaocontentText clearfix'>
+        <label class='baogaocontentLeft'>学习情况：</label>
+        <label class='baogaocontentRight'>{{learning}}</label>
+      </view>
+
+      <view class='baogaocontentText clearfix'>
+        <label class='baogaocontentLeft'>授课内容：</label>
+        <label class='baogaocontentRight'>{{teaching}}</label>
+      </view>
+
+      <!-- 去评价 -->
+      <view class='baogaoevaluation' bindtap='tapEvaluation'>
+        <view class='baogaostatusView'>
+          <label class='baogaostatusView-evaluation'>去评价</label>
+          <image class='baogaostatusView-image' src='{{imageStatus}}'></image>
+        </view>
+      </view>
+
+      <!-- 授课讲师 -->
+      <view class="baogaolecturer" hidden="{{isShow}}">
+        <view class='baogaocontentText'>
+          <label class='baogaolecturerLeft'>授课讲师： </label>
+          <label class='baogaolecturerRight'>{{lecturerName}}</label>
+        </view>
+
+        <!--评价 五角星 -->
+        <view class="comment1-description2">
+        <block wx:for='{{lecturerArr}}' wx:key="{{item}}">
+
+          <view class='comment1-title'>{{item.text}}</view>
+
+          <view class="star-pos" style="display:flex;flex-direction:row;">
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=1? 'on': ''}}" bindtap="changeColor21"></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=2? 'on': ''}}" bindtap="changeColor22"></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=3? 'on': ''}}" bindtap="changeColor23"></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=4? 'on': ''}}" bindtap="changeColor24"></view>
+            <view id='{{index}}' data-item='{{item}}' class="stars  {{item.flag>=5? 'on': ''}}" bindtap="changeColor25"></view>
+          </view>
+        </block>
+        </view>
+
+        <!-- 文本输入 -->
+        <view>
+          <textarea fixed class="baogaotextarea" value="{{baogaovalue}}" placeholder="{{baogaoplaceholder}}" placeholder-class="baogaoplaceholder" maxlength="{{maxlength}}" bindinput="baogaoinputs" focus="false" auto-height="{{false}}" adjust-position="{{true}}" show-confirm-bar="{{show-confirm-bar}}" disabled='{{baogaobottonStat == 1?true:false}}'>
+            <text class='baogaoshowMaxValue'>{{baogaocurrentNumber|0}}/{{maxlength}}</text>
+          </textarea>
+        </view>
+      </view> 
+
+      <!-- 底部按钮 -->
+      <view class='baogaobottonView'></view>
+        <view class='baogaobotton' hidden='{{baogaobottonStat==0?false:true}}'>
+          <button bindtap='baogaocancel' class='baogaobutton-cancel'>取消</button>
+          <button bindtap='baogaosubmit' class='baogaobutton-submit'>提交</button>
+        </view>
+    </view>
+
+  </view>
+
+</view>

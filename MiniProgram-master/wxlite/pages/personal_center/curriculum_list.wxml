@@ -1,0 +1,30 @@
+<!--pages/personal_center/curriculum_list.wxml-->
+<!-- 购课列表 -->
+<view class="container">
+  <view class="nav">购课记录</view>
+  <view class="content">
+    <scroll-view scroll-y class="curriculum_ul">
+      <view class="curriculum_li">
+        <view class="curriculum_li_content">
+          <view class="li_title">
+            <text class="li_title_txt">雅思听力</text>
+            <text class="li_title_type">1v1</text>
+          </view>
+          <view class="li_curriculum_time">
+            <view class="curriculum_time_zong">总课时：200课</view>
+            <view class="curriculum_time_yishangke">已上课：20课</view>
+          </view>
+          <view class="curriculum_date">时间:2018-09-09></view>
+        </view>
+        <view class=""></view>
+
+      </view>
+    </scroll-view>
+  </view>
+  <view class="personal_footer clearfix">
+    <view class="return_btn fl">
+      <image src="../../images/return_img.png"></image>
+    </view>
+  </view>
+
+</view>

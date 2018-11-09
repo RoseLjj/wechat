@@ -1,0 +1,249 @@
+<view class="section" hidden="{{isShowQnaire}}">
+  <!-- 返回 -->
+  <image class='backImage' src='../../../liveSDK/assets/images/videoback.png' bindtap='backReturn'></image>
+  <!-- 标题 -->
+  <view class='backView'>
+    <text class='titleLabel'>{{joinItem.title}}</text>
+  </view>
+  <!-- 视频 & 状态栏 -->
+  <view class="videoView" id="videoView" style="height:{{isShowQnaire?'0':videoHeight}}px;">
+    <image wx:if="{{playStatus=='未开始'}}" hidden="{{showVideo}}" src="../../../liveSDK/assets/images/notStart.png" style="margin-top:{{(videoHeight-140)/2}}px;" class="notStart"></image>
+
+    <video hidden="{{!showVideo}}" id="myVideo" src="{{playSrc}}" class="myVideo" controls="{{controls}}" autoplay="{{autoplay}}" bindtimeupdate="timeupdate" bindplay="playVideo" bindpause="pauseVideo" bindwaiting="waitVideo" bindended="endVideo">
+      <cover-image class="onlyAudio" hidden="{{isVideo}}" src="../../../liveSDK/assets/images/onlyAudio.png"></cover-image>
+      <cover-view class="overHand" bindtap="vTipsClear"></cover-view>
+      <cover-view class="vTips" hidden="{{vTips}}" wx:if="{{playStatus!='已结束'}}">
+        <cover-view class="tipsLeft">
+          <cover-view class="playStatus">
+            <cover-view class="statusIcon"></cover-view>
+            <cover-view class="statusText">{{playStatus}}</cover-view>
+          </cover-view>
+          <cover-view class="playNum">
+            <cover-image class="numIcon" src="../../../liveSDK/assets/icons/numWhite.png">人数</cover-image>
+            <cover-view class="numText">{{playNum}}</cover-view>
+          </cover-view>
+        </cover-view>
+
+        <cover-view class="tipsRight">
+          <!-- <cover-image class="video-control" bindtap="changeVideo" src="{{changeVideoImg}}"></cover-image> -->
+          <cover-image class="full-screen" bindtap="changeScreen" src="{{changeScreenImg}}"></cover-image>
+        </cover-view>
+      </cover-view>
+    </video>
+
+
+    <view wx:if="{{playStatus=='已结束'}}" hidden="{{showVideo}}" style="height:{{videoHeight}}px;" class="endVideo">
+      <view style="margin-top: {{(videoHeight-50)/2}}px">直播已结束</view>
+      <view class="endVideoSmall">谢谢观看</view>
+    </view>
+
+    <view wx:if="{{playStatus=='未开始' || playStatus!='已结束'}}" hidden="{{showVideo}}" class="vTips">
+      <view class="tipsLeft">
+        <view class="playStatus">
+          <cover-view class="statusIcon"></cover-view>
+          <cover-view class="statusText">{{playStatus}}</cover-view>
+        </view>
+        <view class="playNum">
+          <cover-image class="numIcon" src="../../../liveSDK/assets/icons/numWhite.png">人数</cover-image>
+          <cover-view class="numText">{{playNum}}</cover-view>
+        </view>
+      </view>
+
+      <view class="tipsRight">
+        <!-- <image class="video-control" bindtap="changeVideo" src="{{changeVideoImg}}"></image> -->
+        <image class="full-screen" bindtap="changeScreen" src="{{changeScreenImg}}"></image>
+      </view>
+    </view>
+    <!-- <vMain joinid="{{joinid}}" id="video" urlSrc="{{urlSrc}}"></vMain> -->
+  </view>
+
+  <!-- 切换 -->
+  <view class="swiper-title">
+    <view class="swiper-demo" bindtap="swiperDemo1">
+      <view class="swiper-in {{current==0?'choose':''}}">文档</view>
+    </view>
+    <view class="swiper-demo" bindtap="swiperDemo2">
+      <view class="swiper-in {{current==1?'choose':''}}">聊天</view>
+    </view>
+    <!-- <view class="swiper-demo" bindtap="swiperDemo3">
+      <view class="swiper-in {{current==2?'choose':''}}">问答</view>
+    </view> -->
+  </view>
+
+
+
+  <view class="swiper-main" style="height:{{swiperHeight}}px;line-height:{{swiperHeight}}px">
+    <!-- 系统消息 -->
+    <sysMessage></sysMessage>
+
+    <!-- 文档 -->
+    <view class="swiper-item" hidden="{{current==0?false:true}}">
+      <canvas hidden="{{!condition && isShowQnaire}}" canvas-id="drawCanvas" class="canvas" style="height: {{canvasHeight}}px"></canvas>
+      <view hidden="{{condition}}" class="noppt">
+        <view class="noppt-img">
+          <image src="../../../liveSDK/assets/images/noPpt.png" class="noppt-img2"></image>
+        </view>
+        <text class="noppt-text">没有文档，去别处看看</text>
+      </view>
+      <!-- <view hidden="{{!condition}}" class="canvasFull" bindtap="canvasFull">
+                <image src="../../../liveSDK/assets/icons/fullScreen.png" class="canvasToFull"></image>
+            </view> -->
+      <image src="{{documentUrl}}" style="height:{{docHeight}}px;" class="documentUrl"></image>
+
+    </view>
+    <view class="swiper-item" hidden="{{current==1?false:true}}">
+      <!-- 聊天 -->
+      <chat lheight="{{swiperHeight}}" userName='{{joinItem.username}}'></chat>
+    </view>
+    <view class="swiper-item" hidden="{{current==2?false:true}}">
+      <!-- 问答 -->
+      <!-- <qa lheight="{{swiperHeight}}"></qa> -->
+    </view>
+  </view>
+
+  <!-- 抽奖 -->
+  <lottery id="lottery"></lottery>
+
+  <!-- 答题卡(单选) -->
+  <!-- <answerCard id="answerCard"></answerCard> -->
+
+  <!-- 点名 -->
+  <signin id="signin"></signin>
+</view>
+
+<!-- 问卷 -->
+<view class="qnaire" hidden="{{!isShowQnaire}}" wx:for="{{voteAll}}" wx:key='{{index}}' wx:for-item="itemOut" style="z-index: {{index}}">
+  <view class="naire-title">
+    {{itemOut.subject}}
+    <image class="naire-close" bindtap="closeNaire" data-id="{{itemOut.id}}" wx:if="{{itemOut.skip=='true' || itemOut.type=='publish' || itemOut.showAns}}" src="../../../liveSDK/assets/icons/close.png"></image>
+  </view>
+  <view class="naire-point" wx:if="{{itemOut.type=='question' && itemOut.skip!='true'}}">此问卷不能跳过哦，请努力完成吧</view>
+
+  <view wx:if="{{itemOut.type=='question' && !itemOut.showAns}}" wx:for="{{itemOut.questions}}">
+    <view class="naire-single" wx:if="{{item.type=='single'}}">
+      <view class="single-title">{{index+1}}.【单选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <image class="single-choose" src="{{itemIn.selected?voteSingleSel2:voteSingleSel}}" bindtap="singleTap" data-id="{{itemIn.id}}" data-qaid="{{item.id}}"></image>
+        <view class="single-text">{{voteList[sort]}}.{{itemIn.option}}</view>
+      </view>
+    </view>
+
+    <view class="naire-multiple" wx:if="{{item.type=='multi'}}">
+      <view class="single-title">{{index+1}}.【多选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <image class="single-choose" src="{{itemIn.selected?voteMultSel2:voteMultSel}}" bindtap="multTap" data-id="{{itemIn.id}}"></image>
+        <view class="single-text">{{voteList[sort]}}.{{itemIn.option}}</view>
+      </view>
+    </view>
+
+    <view class="naire-area" wx:if="{{item.type=='text'}}">
+      <view class="single-title">{{index+1}}.【问答】{{item.subject}}</view>
+      <textarea class="qnArea" cursor-spacing="12" maxlength="-1" auto-height="true" show-confirm-bar="{{showBar}}" bindinput="textInput" data-id="{{item.id}}"></textarea>
+    </view>
+
+  </view>
+
+  <view wx:if="{{itemOut.type=='question' && itemOut.showAns}}" wx:for="{{itemOut.questions}}">
+    <view class="naire-single" wx:if="{{item.type=='single'}}">
+      <view class="single-title">{{index+1}}.【单选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <text class="showTrue {{itemIn.correct=='true'?'showTrueBg':''}}" style="float: left;"><text wx:if="{{itemIn.correct=='true'}}">正确</text></text>
+        <image class="single-choose" src="{{itemIn.selected?voteSingleSel3:voteSingleSel}}" style="margin-left: 10rpx;"></image>
+        <view class="single-text" style="padding-left: 120rpx;">{{voteList[sort]}}.{{itemIn.option}}</view>
+      </view>
+    </view>
+
+    <view class="naire-multiple" wx:if="{{item.type=='multi'}}">
+      <view class="single-title">{{index+1}}.【多选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <text class="showTrue {{itemIn.correct=='true'?'showTrueBg':''}}" style="float: left;"><text wx:if="{{itemIn.correct=='true'}}">正确</text></text>
+        <image class="single-choose" src="{{itemIn.selected?voteMultSel3:voteMultSel}}" style="margin-left: 10rpx;"></image>
+        <view class="single-text" style="padding-left: 120rpx;">{{voteList[sort]}}.{{itemIn.option}}</view>
+      </view>
+    </view>
+
+    <view class="naire-area" wx:if="{{item.type=='text'}}">
+      <view class="single-title">{{index+1}}.【问答】{{item.subject}}</view>
+      <textarea class="qnArea" disabled="true" maxlength="-1" auto-height="true" show-confirm-bar="{{showBar}}" value="{{item.answer}}"></textarea>
+    </view>
+
+  </view>
+
+  <view wx:if="{{itemOut.type=='publish'}}" wx:for="{{itemOut.questions}}">
+    <view class="naire-single" wx:if="{{item.type=='single'}}">
+      <view class="single-title">{{index+1}}.【单选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <view class="result-text">
+          <text wx:if="{{itemOut.showTrue}}" class="showTrue {{itemIn.correct=='true'?'showTrueBg':''}}"><text wx:if="{{itemIn.correct=='true'}}">正确</text></text>
+          <text class="resultNum">{{voteList[sort]}}</text>
+          <view class="resultPro">
+            <view class="proOut">
+              <view class="proIn" style="width: {{itemIn.total/item.total*100}}%;"></view>
+            </view>
+          </view>
+          <text class="resultTotal">{{itemIn.total}}人</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="naire-multiple" wx:if="{{item.type=='multi'}}">
+      <view class="single-title">{{index+1}}.【多选】{{item.subject}}</view>
+
+      <view class="single-item" wx:for="{{item.items}}" wx:for-index="sort" wx:for-item="itemIn">
+        <view class="result-text">
+          <text wx:if="{{itemOut.showTrue}}" class="showTrue {{itemIn.correct=='true'?'showTrueBg':''}}"><text wx:if="{{itemIn.correct=='true'}}">正确</text></text>
+          <text class="resultNum">{{voteList[sort]}}</text>
+          <view class="resultPro">
+            <view class="proOut">
+              <view class="proIn" style="width: {{itemIn.total/item.total*100}}%;"></view>
+            </view>
+          </view>
+          <text class="resultTotal">{{itemIn.total}}人</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="naire-area" wx:if="{{item.type=='text'}}">
+      <view class="single-title">{{index+1}}.【问答】{{item.subject}}</view>
+      <view class="areaResult">参加人数：{{item.total}}人</view>
+    </view>
+  </view>
+
+  <!-- <view class="naire-single">
+        <view class="single-title">1.【单选】下列李稻葵教授李稻葵就来的快就是独立开发经理是看得见流口水</view>
+        <view class="single-item">
+            <image class="single-choose" src="../../../liveSDK/assets/icons/single.png"></image>
+            <view class="single-text">A.发拉开松井大辅了就死定了付</view>
+        </view>
+        <view class="single-item">
+            <image class="single-choose" src="../../../liveSDK/assets/icons/single.png"></image>
+            <view class="single-text">B.发拉开松井大辅了就死定了</view>
+        </view>
+    </view> -->
+
+  <!-- <view class="naire-multiple">
+        <view class="single-title">2.【多选】下列李稻葵教授李稻葵就来的快就是独立开发经理是看得见流口水</view>
+        <view class="single-item">
+            <image class="single-choose" src="../../../liveSDK/assets/icons/multiple.png"></image>
+            <view class="single-text">A.发拉开松井大辅了就死定了</view>
+        </view>
+        <view class="single-item">
+            <image class="single-choose" src="../../../liveSDK/assets/icons/multiple.png"></image>
+            <view class="single-text">B.发拉开松井大辅了就死定了</view>
+        </view>
+    </view> -->
+
+  <!-- <view class="naire-area">
+        <view class="single-title">3.【问答】下列李稻葵教授李稻葵就来的快就是独立开发经理是看得见流口水</view>
+        <textarea class="qnArea" maxlength="-1" auto-height="true"></textarea>
+    </view> -->
+
+  <view class="naire-submit" wx:if="{{itemOut.type=='question' && !itemOut.showAns}}">
+    <view class="submit-button" bindtap="subVote" data-id="{{itemOut.id}}">提交</view>
+  </view>
+</view>

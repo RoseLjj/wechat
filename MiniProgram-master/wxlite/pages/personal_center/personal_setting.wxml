@@ -1,0 +1,58 @@
+<!--pages/personal_center/personal_setting.wxml-->
+<!-- 人物设置 -->
+<view class="container">
+  <view class="porsonal_setting_top">
+    <view class="top_tips">综合2309</view>
+    <view class="porsonal_setting_swiper"></view>
+    <view class="bottom_tips">
+      <view class="tips_span">青春+400</view>
+      <view class="tips_span">学识+200</view>
+      <view class="tips_span">华丽+400</view>
+      <view class="tips_span">美丽+400</view>
+    </view>
+  </view>
+  <view class="porsonal_setting_bottom">
+    <view class="backpack_top">
+      <view class="backpack_title_ul">
+        <view class="backpack_title_li active">外套</view>
+        <view class="backpack_title_li">头饰</view>
+        <view class="backpack_title_li">帽子</view>
+        <view class="backpack_title_li">裤子</view>
+        <view class="backpack_title_li">鞋</view>
+      </view>
+    </view>
+    <view class="backpack_bottom">
+      <scroll-view scroll-y class="backpack_content">
+        <view class="item_wrap">
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+          <view class="backpack_item"></view>
+        </view>
+        
+      </scroll-view>
+    </view>
+  </view>
+  <view class="personal_footer clearfix">
+    <view class="return_btn fl" >
+      <image src="../../images/return_img.png"></image>
+    </view>
+    <view class="share_btn fl" bindtap="">
+      <image src="../../images/share_img.png"></image>
+    </view>
+    <view class="save_btn fr">保存穿戴</view>
+  </view>
+</view>

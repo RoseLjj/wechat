@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "money": "/components/money/money",
+    "diamond": "/components/diamond/diamond",
+    "mistakes": "/components/mistakes/mistakes",
+    "goback": "/components/goback/goback",
+    "portrait": "/components/portrait/portrait",
+    "comprehensive": "/components/comprehensive/comprehensive"
+  }
+}

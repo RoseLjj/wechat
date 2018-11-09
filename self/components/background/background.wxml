@@ -1,0 +1,4 @@
+<!--components/background/background.wxml-->
+<view>
+  <image src='{{bgcImg[0]}}' class="backgroundImage"></image>
+</view>

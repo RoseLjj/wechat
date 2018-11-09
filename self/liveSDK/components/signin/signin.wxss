@@ -1,0 +1,70 @@
+/* components/signin/signin.wxss */
+.signin {
+	width: 540rpx;
+	height: 410rpx;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -205rpx;
+	margin-left: -270rpx;
+	z-index: 999;
+}
+.signin-title {
+	height: 88rpx;
+	width: 100%;
+	background-color: #ffffff;
+	position: relative;
+}
+.tit-text {
+	line-height: 88rpx;
+	font-size: 28rpx;
+	color: #333333;
+	margin-left: 30rpx;
+	float: left;
+}
+.tit-image {
+	width:26rpx;
+	height:26rpx;
+	line-height: 26rpx;
+	position:absolute;
+	padding:10rpx;
+	top: 20rpx;
+	right: 20rpx;
+}
+.signin-main {
+	height: 320rpx;
+	background-color: #ffffff;
+	border-top: 2rpx solid #e7e7e7;
+	position: relative;
+	text-align: center;
+	background: #fff;
+	background-size: 256rpx 236rpx;
+}
+.mainText {
+	/*font-size: 60rpx;*/
+	line-height: 60rpx;
+	color: #0078d7;
+	margin-top: 80rpx;
+}
+
+.hover {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.5;
+	z-index: 100
+}
+.check-in {
+	width: 228rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #fff;
+	font-size: 28rpx;
+	background-color: #0078d7;
+	text-align: center;
+	margin: 50rpx auto 0 auto;
+	border-radius: 60rpx;
+}

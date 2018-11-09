@@ -1,0 +1,23 @@
+<!--components/record/record.wxml-->
+<!--弹窗-->
+<view class="modal-record-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showRecordModal}}"></view>
+<view class="modal-record-dialog" wx:if="{{showRecordModal}}" style='margin-top:{{record_marginTop}}'>
+  <view class="modal-record-tips">批改记录</view>
+  <image class="modal-record-close" src='{{bgcImg[1]}}' bindtap='hideModal'></image>
+  <view class="modal-record-content">
+    <view wx:for="{{recordArr}}" wx:key="{{index}}">
+      <view class="record-word" wx:if="{{!item.is_audio}}" bindtap="checkWord" data-url="{{item.audio_file}}">
+        <image src='{{bgcImg[0]}}'></image>
+        <view class="record-word-title">{{item.audio_tname}}</view>
+      </view>
+      <view class="record-audio" wx:if="{{item.is_audio}}" data-url="{{item.audio_file}}" bindtap='audioPlay' data-index="{{index}}">
+        <image src='{{item.img2}}'></image>
+        <view class="record-audio-title">{{item.time}}</view>
+        <audio src="" id="myAudio" ></audio>
+      </view>
+    </view>
+  </view>
+  <view class="modal-record-footer">
+    <view class="btn-record-confirm" bindtap="onConfirm" data-status="confirm">确认</view>
+  </view>
+</view>

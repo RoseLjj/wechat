@@ -1,0 +1,6 @@
+/* components/mistakes/mistakes.wxss */
+@import '../component.wxss';
+
+button::after{
+  border:none;
+}

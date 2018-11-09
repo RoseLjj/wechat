@@ -1,0 +1,73 @@
+<!--pages/competitive/competitive.wxml-->
+<!-- PK竞技场 -->
+<view class="arena-backgroundImg">
+  <image src='{{bgcImg[0]}}'></image>
+</view>
+<!-- 四叶草 -->
+<clover cloverNumber="{{cloverNumber}}" />
+<!-- 我的战绩 -->
+<view class='text-a-center arena-my-result-box'>
+  <view class="arena-my-result">
+    <view class="arena-my-portrait fl">
+      <image src="{{head_avatar}}"></image>
+    </view>
+    <view class="arena-my-info fl">
+      <view class="arena-my-name">
+        <text>{{nickname}}</text>
+        <image class="arena-sex" wx:if="{{sex == 1}}" src='{{bgcImg[7]}}'></image>
+        <image class="arena-sex" wx:if="{{sex != 1}}" src='{{bgcImg[8]}}'></image>
+      </view>
+      <view class="arena-my-comment">
+        <view>{{user_title}}</view>
+      </view>
+    </view>
+    <view class="fr">
+      <view class="arena-my-honer4">{{rank}}</view>
+    </view>
+    <view class="fr text-a-right marigin-r10">
+      <view class="arena-my-honer1">荣誉积分</view>
+      <view class="arena-my-honer2">{{honor_score}}</view>
+      <view class="arena-my-honer3">打败了{{beat_people}}人</view>
+    </view>
+
+  </view>
+</view>
+<!-- 游戏列表 -->
+<view class="arena-list-box">
+  <scroll-view scroll-y class="arena-list">
+    <view class="arena-list-one-box" bindtap='goUserRank' data-index="{{index}}" wx:for="{{gameList}}" wx:key="{{index}}">
+      <view class="arena-list-one" style='background-image:url({{item.img}})'>
+        <view class="fl text-a-left">
+          <view class="arena-game-one1">{{item.name}}</view>
+          <view class="arena-game-one2">{{item.people}}人找不到对手</view>
+          <view class="arena-game-one3">{{item.lable}}</view>
+        </view>
+        <!-- <view class='fr'>
+          <image src="{{bgcImg[9]}}"></image>
+        </view> -->
+      </view>
+    </view>
+
+    <view class="arena-list-one-box">
+      <view class="arena-list-one arena-list-wu" style='background-image:url()'>
+        <view class="fl text-a-left">
+          <view class="arena-game-one1">敬请期待</view>
+          <view class="arena-game-one2">0人找不到对手</view>
+          <view class="arena-game-one3">准备中</view>
+        </view>
+        <view class='fr'>
+          <view class="arena-game-bgc">
+            <image src="{{bgcImg[16]}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="arena-list-bottom">
+    <image src="{{bgcImg[3]}}"></image>
+  </view>
+</view>
+
+<view class="arena-footer">
+  <goBack/>
+</view>

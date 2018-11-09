@@ -1,0 +1,39 @@
+<!--pages/question/question.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+     <!-- 充值 -->
+     <view class="fl">
+       <money/>
+     </view>
+     <!-- 钻石 -->
+     <view class="fl">
+       <diamond/>
+     </view>
+  </view>
+  <!-- 错题集 -->
+  <mistakes/>
+  <!-- 科目 -->
+  <view wx:if="{{pageType=='subject'}}">
+    <subject/>
+  </view>
+  <view wx:if="{{pageType=='questionsType'}}">
+    <questionsType/>
+  </view>
+  <view wx:if="{{pageType=='subsubjects'}}">
+    <subsubjects/>
+  </view>
+  <view wx:if="{{pageType=='questionList'}}">
+    <questionList/>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

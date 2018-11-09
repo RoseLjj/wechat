@@ -1,0 +1,82 @@
+<!--pages/play/play.wxml-->
+<view class="container" style="width:100%;height: 100%;">
+  <view class="zhibo_content_top" style="width:100%;height: 100%;">
+    <view class="zhibo_top" hidden="{{is_horizontal}}">
+      <view class="return_page" bindtap="return_page">
+        <image src="../../images/return.png"></image>
+      </view>
+    </view>  
+    <view style="width:100%;height:{{is_horizontal?'100%':'422rpx'}}; position:relative;">  
+      <live-player
+        style="width:100%;height:100%; position:absolute;"
+        id="video-livePlayer"
+        mode="live"
+        orientation="{{orientation}}"
+        muted="{{muted}}"
+        background-mute="{{backgroundMute}}"
+        object-fit="{{objectFit}}"
+        min-cache="1"
+        max-cache="3"
+        src="{{playUrl}}" 
+        debug="{{debug}}"
+        bindstatechange="onPlayEvent"
+        bindfullscreenchange="onFullScreenChange"> 
+        <!-- <cover-image hidden="{{playing}}" style="width:100%; height: 100%; position:absolute;" src="https://mc.qcloudimg.com/static/img/7da57e0050d308e2e1b1e31afbc42929/bg.png"></cover-image> -->
+        <cover-view wx:if="{{!debug || exterFlag}}" style="width:100%; height: 50px; position:absolute; bottom:30px;padding-left:calc(100% / 7);" >
+        <cover-view class='bottom_box'>       
+          <cover-image class="bottom_button" src="../Resources/{{playing?'suspend':'start'}}.png" bindtap='onPlayClick'></cover-image>
+          <cover-view class='bottom_text'>播放</cover-view>
+        </cover-view>
+        <cover-view class='bottom_box'>       
+          <cover-image class="bottom_button" src="../Resources/{{orientation == 'vertical'?'portrait':'landscape'}}.png" bindtap='onOrientationClick'></cover-image>
+          <cover-view class='bottom_text'>{{orientation == 'vertical'?'竖屏':'横屏'}}</cover-view>
+        </cover-view>
+        <cover-view class='bottom_box'>       
+          <cover-image class="bottom_button" src="../Resources/{{debug?'log':'log2'}}.png" bindtap='onLogClick'></cover-image>
+          <cover-view class='bottom_text'>日志</cover-view>
+        </cover-view>
+        <cover-view class='bottom_box'>       
+          <cover-image class="bottom_button" src="../Resources/{{muted?'sound-dis':'sound'}}.png" bindtap='onMuteClick'></cover-image>
+          <cover-view class='bottom_text'>声音</cover-view>
+        </cover-view>
+        <cover-view class='bottom_box'>       
+          <cover-image class="bottom_button" src="../Resources/{{objectFit == 'contain'?'adjust':'fill'}}.png" bindtap='onObjectfitClick'></cover-image>
+          <cover-view class='bottom_text'>{{objectFit == 'contain'?'适应':'填充'}}</cover-view>
+        </cover-view>
+        </cover-view>   
+      </live-player>  
+    </view>  
+      <view class="zhibo_title_wrap">
+        <text class="zhibo_title">直播标题直播标题直播标题直播标题直播标题直播标题直播标题直播标题直播标题</text>
+        <image class="fankui" src="../../images/fankui.png"></image>
+      </view>
+  </view>
+  <view class="message_content_wrap">
+        <view class="zhibo_xian"></view>
+        <view class="message_ul_wrap">
+          <scroll-view scroll-y class="message_ul" scroll-top="{{message_h}}" scroll-with-animation="true">
+            <view class="message_li_wrap" >
+              <view class="message_li clearfix" wx:for="{{tach_list}}" wx:key="*this">
+                  <view class="msg_li_top clearfix">
+                    <view class="user_head">
+                      <image src="{{item.user_headImg}}"></image>
+                    </view>
+                    <view class="user_name">{{item.user_name}}:</view>
+                  </view>
+                  <view class="message_content">{{item.user_content}}</view>
+              </view>  
+              <view class="" id="scroll_bottom"></view>  
+            </view>     
+          </scroll-view>
+        </view>
+        
+  </view>
+  <view class="box_footer clearfix">
+    <view class="footer_content">
+      <view class="tach_input">
+        <textarea maxlength='-1' adjust-position="false" cursor-spacing="100rpx" bindinput="get_content" value="{{txt_content}}" bindblur="" show-confirm-bar="" auto-height placeholder="" />
+      </view>
+      <view bindtap="sendMessage" class="send_btn {{is_send?'gre_btn':'gry_btn'}}">发送</view>
+    </view>
+  </view>
+</view>  

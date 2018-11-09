@@ -1,0 +1,26 @@
+/* pages/courseCenter/chooseSubject/chooseSubject.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+.select-subject {
+  height: 79.5%;
+  overflow-y: auto;
+  background: linear-gradient(#fffcf0 0%, #fff7dd 93%, rgba(255, 255, 255, 0) 100%);
+  min-height: 930rpx;
+}
+
+.chooseSubject {
+  background: #7bc6cc;
+  color: #fff;
+  margin: 0rpx 20rpx 48rpx 20rpx;
+  height: 112rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #7bc6cc;
+}
+
+.chooseSubject:last-child {
+  color: #7bc6cc;
+  background: #fff;
+}

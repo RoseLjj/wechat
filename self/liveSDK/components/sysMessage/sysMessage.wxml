@@ -1,0 +1,7 @@
+<!--components/sysMessage/sysMessage.wxml-->
+<cover-view class="sysMessage" hidden="{{!isShowSys}}">
+		<cover-image src="../../assets/icons/sysMsg.png" class="sys-image"></cover-image>
+		<cover-view class="sys-desc">
+			<cover-view animation="{{animationData}}" class="sys-message">{{messageVal}}</cover-view>
+		</cover-view>
+</cover-view>

@@ -1,0 +1,169 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"libVersion": "2.3.0",
+	"appid": "wx56e0cb646449f1d0",
+	"projectname": "newSelf",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"compileType": "miniprogram",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": 0,
+					"name": "子科目",
+					"pathName": "pages/studyRoom/subsubjects/subsubjects",
+					"query": "type=1&id=Tpw8XA2E16QNDg"
+				},
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "模考填写信息",
+					"pathName": "pages/practice/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报名信息",
+					"pathName": "pages/practice/signup/signup",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "报名成功",
+					"pathName": "pages/practice/signSuc/signSuc",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "模考试卷列表",
+					"pathName": "pages/practice/paperList/paperList",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "练习正确率",
+					"pathName": "pages/studyRoom/correctRate/correctRate",
+					"query": "report_id=SM89VArShfIMDA"
+				},
+				{
+					"id": 8,
+					"name": "模考正确率",
+					"pathName": "pages/practice/correct/correct",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "科目-提交页面",
+					"pathName": "pages/studyRoom/submission/submission",
+					"query": "report_id=S802XFvQhf0NDZA&id=SZxnXguEhfEMC5E&type=2&answer_id=H55gXgCBgfQICpOPLw"
+				},
+				{
+					"id": 10,
+					"name": "试题列表",
+					"pathName": "pages/studyRoom/questionsList/questionsList",
+					"query": "sid=Tpw8XA2E16QNDg&stid=&type=3&alias="
+				},
+				{
+					"id": 11,
+					"name": "综合评分",
+					"pathName": "pages/studyRoom/composite/composite",
+					"query": "report_id=Tso9XACD0qANDpM"
+				},
+				{
+					"id": 12,
+					"name": "教室列表",
+					"pathName": "pages/classRoom/courseList/courseList",
+					"query": "sid=HMhgCFzSgfIMCQ&stid=SJlkWAmC16YLCJY&type=1&alias=数学"
+				},
+				{
+					"id": -1,
+					"name": "榜单列表",
+					"pathName": "pages/taskRank/rankList/rankList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "任务列表",
+					"pathName": "pages/taskRank/taskList/taskList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选课类型",
+					"pathName": "pages/courseCenter/chooseType/chooseType",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "子科目选择",
+					"pathName": "pages/courseCenter/chooseSubject/chooseSubject",
+					"query": "id=Tpw8XA2E16QNDg"
+				},
+				{
+					"id": -1,
+					"name": "课程列表",
+					"pathName": "pages/courseCenter/courseList/courseList",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "选课中心详情",
+					"pathName": "pages/courseCenter/courseCenterDetails/courseCenterDetails",
+					"query": "id=RcozWlzVgPIPDpY&idChildSubject=TM80W13Z16AIDZY&idSubject=Tpw8XA2E16QNDg"
+				},
+				{
+					"id": -1,
+					"name": "选课中心首页",
+					"pathName": "pages/courseCenter/chooseSub/chooseSub",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "收藏列表",
+					"pathName": "pages/studyRoom/collection/collection",
+					"query": ""
+				}
+			]
+		}
+	}
+}

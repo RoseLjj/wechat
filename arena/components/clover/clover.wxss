@@ -1,0 +1,2 @@
+/* common/clover/clover.wxss */
+@import '../../app.wxss';

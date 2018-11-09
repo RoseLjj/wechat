@@ -1,0 +1,10 @@
+<!--components/money/money.wxml-->
+<!-- 充值 -->
+<view class="myMoney">
+  <view class="siyecao fl">
+    <image src='../../image/icon/siyecao-dingbu@3x.png' class="recharge"></image>
+  </view>
+
+  <text>1,931,236</text>
+  <!-- <image bindtap='chongzhi' src='../../image/icon/chongzhi@2x.png' class="recharge-add"></image> -->
+</view>

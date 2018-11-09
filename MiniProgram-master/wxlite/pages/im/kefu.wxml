@@ -1,0 +1,29 @@
+<!--pages/im/kefu.wxml-->
+<view class="container">
+  <view class="kefu_title">
+        <view class="kefu_title_txt">客服</view>
+        <view class="kefu_title_tips">在线时间：早7:00-晚22:30</view>
+        <view class="return_page"></view>
+  </view>
+  <view class="tach_message">
+      <view class="tach_content_ul">
+        <view wx:for="{{tach_list}}" class="message_li {{item.l_or_r==1 ? 'message_li_l' : 'message_li_r'}} clearfix" >
+          <view class="user_head">
+            <image src="{{item.l_or_r==1 ?'../../images/nan.png':'../../images/nv.png'}}" ></image>
+          </view>
+          <view class="message_content">{{item.content}}</view>
+        </view>
+      </view>
+  </view>          
+  <view class="box_footer clearfix">
+    <view class="footer_content">
+      <view id="emoji" class="fl">
+      <image src="../../images/emoji_btn.png" ></image>
+      </view>
+      <view class="tach_input">
+        <textarea maxlength='-1' cursor-spacing="100rpx" bindinput="get_content" value="{{txt_content}}" bindblur="" show-confirm-bar="" auto-height placeholder="" />
+      </view>
+      <view bindtap="sendMessage" class="send_btn {{is_send?'gre_btn':'gry_btn'}}">发送</view>
+    </view>
+  </view>
+</view>

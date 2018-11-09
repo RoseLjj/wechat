@@ -1,0 +1,82 @@
+<!--pages/practice/userInfo/userInfo.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+  <!-- 报名 -->
+  <view class="select-subject">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <input name="input" placeholder="姓名" />
+      </view>
+      <view class="section">
+        <input name="input" maxlength="11" type="number" placeholder="手机号" />
+      </view>
+      <view class="section">
+        <input name="input" placeholder="微信号" />
+      </view>
+      <view class="section">
+        <input name="input" placeholder="邮箱" />
+      </view>
+      <view class="section isRadio  clearfix">
+        <label class='fl'>是否参加过雅思考试</label>
+        <radio-group class="isCan group fr">
+          <view class="attr_value">
+            <radio value="1" color='' checked></radio>
+            <label class='radio_label'>是</label>
+          </view>
+          <view class="attr_value">
+            <radio value="2" color=''></radio>
+            <label class='radio_label'>否</label>
+          </view>
+        </radio-group>
+      </view>
+      <view class="section isRadio clearfix">
+        <label class='fl'>是否需要考试相关讲解</label>
+        <radio-group class="group testcore fr">
+          <view class="attr_value">
+            <radio value="1" color='' checked></radio>
+            <label class='radio_label'>是</label>
+          </view>
+          <view class="attr_value">
+            <radio value="2" color=''></radio>
+            <label class='radio_label'>否</label>
+          </view>
+        </radio-group>
+      </view>
+      <view class="tui-picker-content">
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+          <view class="tui-picker-detail fsz-16">
+            {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+          </view>
+        </picker>
+      </view>
+      <view class="test-rule">
+        <view>考试规则：</view>
+        <view>
+          考试当天上午9:00开始考听力、阅读、写作部分，下午13:00开始考口语部分
+        </view>
+      </view>
+      <view class="btn-area">
+        <button formType="submit fsz-16">付款</button>
+      </view>
+    </form>
+    <view class="bgc-jb"></view>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

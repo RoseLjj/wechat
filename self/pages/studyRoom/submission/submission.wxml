@@ -1,0 +1,90 @@
+<!--pages/studyRoom/submission/submission.wxml-->
+<!-- 背景图片 -->
+<!-- 主题内容 -->
+<view class='backgroundAll bg-7BC6CC'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+  <!-- 科目 -->
+  <view class='display-ib margin-t16'>
+    <view class="question-name fsz-14 bgc-FFF7DD color-1ADAAF ">{{test_name}}</view>
+    <view class="correct-box bgc-FFECB1">
+      <view class='bgc-FFF7DD'>
+        <view class='bgc-FFECB1 display-ib useTime fsz-14 color-FF7474'>用时
+          <view wx:if='{{isHaveTime}}'>　|　{{answer_time}}</view>
+        </view>
+        <view class='color-1ADAAF fw-700 fsz-26 corate margin-top50' wx:if='{{isStatus == 2}}'>{{answer_time}}</view>
+        <view class='color-1ADAAF fw-700 fsz-26 corate' wx:if='{{isStatus == 1}}'>得分: {{total_score}}</view>
+        <view class='color-1ADAAF fw-700 fsz-26 corate' wx:if='{{isStatus == 3 }}'>答对个数: {{true_number}}</view>
+        <view class="zonghe" wx:if='{{type == 3 && isHaveTime && isKemu}}' bindtap='goZonghe'>综合评分</view>
+        <view class="fsz-14 chaoguo">
+          <view class='display-ib bgc-FFECB1 color-F68314' wx:if='{{isHaveTime}}'>正确率 {{answer_rate}}%</view>
+          <view class='display-ib bgc-FFECB1 color-F68314' wx:if='{{is_show_exceed == 1}}'>您超越了{{exceed_rate}}%的人</view>
+          <view class='display-ib bgc-FFECB1 color-F68314 btn-apply' wx:if='{{!isHaveTime && is_reading == 0}}' bindtap='shenQing'>申请批改</view>
+          <view class='display-ib bgc-FFECB1 color-F68314 btn-al-apply' wx:if='{{!isHaveTime && is_reading == 1}}'>已申请批改</view>
+          <view class='display-ib bgc-FFECB1 color-F68314 btn-record' wx:if='{{!isHaveTime && is_reading == 2}}' bindtap='getCorrectRecord'>批改记录</view>
+          <view class='display-ib bgc-FFECB1 color-F68314 btn-zonghe' wx:if='{{!isHaveTime && type == 3  && isKemu}}' bindtap='goZonghe'>综合评分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="">
+    <view class="number-list">
+      <view>
+        <view class="tips-title">
+          <view class="tips_one tips-right">
+            <view class="bgc-1ADAAF"></view>
+            <view class="color-1ADAAF">正确</view>
+          </view>
+          <view class="tips_one tips-weida">
+            <view></view>
+            <view class='color-FF7474'>未答</view>
+          </view>
+          <view class="tips_one tips-wrong">
+            <view class="bgc-red"></view>
+            <view class='color-FF7474'>错误</view>
+          </view>
+        </view>
+
+        <view class="tips-subject">
+          <view class="leftJiao" wx:if="{{isLeft}}" bindtap='clickLeft'></view>
+          <view>{{kemu}}</view>
+          <view class="rightJiao" wx:if="{{isRight}}" bindtap='clickRight'></view>
+        </view>
+      </view>
+    </view>
+    <scroll-view class='text-a-left margin-l20 fsz-16 right-list' scroll-y scroll-with-animation>
+      <view class='display-ib width-40 height-40 tihao text-a-center' wx:for="{{numArr}}" wx:key="{{index}}">
+        <view class="color-white {{item.bgc}}" bindtap=''>{{item.num}}</view>
+      </view>
+    </scroll-view>
+
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 分享 -->
+    <view class="go-back" >
+      <button open-type="share">
+        <image src='../../../image/icon/fenxiang@2x.png'></image>
+      </button>
+    </view>
+    <view class="go-back">
+      <view class="repractice bgc-white fsz-16 color-1ADAAF fw-700" bindtap='goRepractice'>重新练习</view>
+    </view>
+    <view class="go-back">
+      <view class="repractice bgc-white fsz-16 color-1ADAAF fw-700" bindtap='goAnalysis'>查看解析</view>
+    </view>
+    <!-- 头像 -->
+  </view>
+</view>
+<web-view wx:if="{{goUrl}}" src="{{goUrl}}"></web-view>
+<!-- 弹框 -->
+<modal modalMeesage="{{modalMeesage}}" modalConfirm="{{modalConfirm}}" showModal="{{showModal}}" modalCancel="{{modalCancel}}" modalType="{{modalType}}" id="modal" />
+
+<!-- 批改记录 -->
+<record class="modal-record" wx:if="{{showRecordModal}}" showRecordModal="{{showRecordModal}}" recordArr="{{recordArr}}" record_marginTop="{{record_marginTop}}" />

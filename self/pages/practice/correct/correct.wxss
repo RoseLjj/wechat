@@ -1,0 +1,71 @@
+/* pages/practice/correct/correct.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+page{
+  background-color:#7BC6CC; 
+}
+
+
+.question-name{
+  width: 710rpx;
+  line-height: 68rpx;
+}
+
+.correct-box{
+  padding: 16rpx;
+}
+
+.correct-box>view{
+  padding-bottom: 60rpx;
+}
+
+.useTime{
+  width: 302rpx;
+  line-height: 60rpx;
+}
+
+.corate{
+  /* margin: 44rpx 0; */
+  padding: 84rpx 0 64rpx 0;
+}
+
+.chaoguo view{
+  width: 308rpx;
+  line-height: 76rpx;
+  border-radius: 200rpx;
+  margin: 0 8rpx;
+}
+
+.rightBox{
+  width: 144rpx;
+  height: 48rpx;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,.5);
+  display: inline-block;
+  padding:10rpx 16rpx;
+}
+
+.rightFang{
+  width: 28rpx;
+  height: 28rpx;
+  /* margin-top: 10rpx; */
+  /* margin-left: 16rpx; */
+}
+
+.rightBox>view:nth-of-type(2){
+  line-height: 28rpx;
+}
+
+.tihao{
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+}
+
+.right-list{
+  height: 340rpx;
+}
+
+.tiList{
+  margin-top: 100rpx;
+}

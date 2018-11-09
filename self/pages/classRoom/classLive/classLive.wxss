@@ -1,0 +1,415 @@
+/* pages/videodemo/videodemo.wxss */
+.backView {
+  width: 100%;
+  height: 64px;
+  background-color: #1ADAAF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backImage {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  margin-top: 24px;
+  margin-left: 16px;
+}
+
+.titleLabel {
+  width: 300rpx;
+  color: white;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 20px;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;  
+  text-align:center;
+}
+
+.videoView {
+	width: 100%; 
+	position: relative;
+	background-color: #1b1b23;
+	overflow:hidden;
+}
+.videoView .myVideo {
+	width: 100%;
+	height: 100%;
+}
+.videoView .onlyAudio{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99;
+}
+.videoView .overHand {
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.videoView .vTips {
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 22rpx;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 0, 0.6);
+	font-size: 22rpx;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+}
+
+.videoView .tipsLeft {
+	float: left;
+	margin-left: 20rpx;
+}
+.videoView .tipsLeft .playStatus {
+	height: 40rpx;
+	line-height: 50rpx;
+}
+
+.videoView .tipsLeft .statusIcon{
+	width: 16rpx;
+	height: 16rpx;
+	background-color: #ef5045;
+	border-radius: 100%;
+	float: left;
+	margin-top: 22rpx;
+	margin-right: 10rpx;
+}
+.videoView .tipsLeft .statusText {
+	margin-top: 16rpx;
+	float: left;
+}
+
+.videoView .tipsLeft .playNum {
+	height: 40rpx;
+	line-height: 30rpx;
+}
+.videoView .tipsLeft .numIcon {
+	width: 16rpx;
+	height: 18rpx;
+	float: left;
+	margin-top: 8rpx;
+	margin-right: 10rpx;
+	/*background: url("http://192.168.0.166/images/icons.png") no-repeat;
+	background-position: 1% 1%;
+	background-size: 210px 150px;*/
+}
+.videoView .tipsLeft .numText {
+	margin-top: 4rpx;
+	float: left;
+}
+
+
+.videoView .tipsRight {
+	float: right;
+}
+.videoView .video-control, .full-screen {
+	width: 40rpx;
+	height: 40rpx;
+	padding: 10rpx;
+	margin-top: 10rpx;
+	display: inline-block;
+}
+.videoView .video-control {
+	margin-right: 30rpx;
+}
+.videoView .full-screen {
+	margin-right: 20rpx;
+}
+.notStart {
+	width: 350rpx;
+	height: 208rpx;
+	margin: 0 auto;
+	display: block;
+}
+.endVideo {
+	width: 100%;
+	text-align: center;
+	font-size: 34rpx;
+	color: #fff;
+}
+.endVideoSmall {
+	font-size: 28rpx;
+}
+
+
+
+.swiper-title {
+	width: 100%;
+	height: 78rpx;
+	line-height: 78rpx;
+	border-bottom: 1px solid #e6e6e6;
+	display: flex;
+}
+.swiper-title .swiper-demo {
+	flex: 1;
+	text-align: center;
+	font-size: 30rpx;
+	color: #666666;
+}
+.swiper-title .swiper-in {
+	height: 78rpx;
+	width: 78rpx;
+	margin: 0 auto;
+}
+.swiper-title .choose {
+	color: #0078d7;
+	height: 74rpx;
+	border-bottom: 2px solid #0078d7;
+}
+
+
+
+
+
+
+
+.swiper-main {
+	width: 100%;
+	position:relative;
+}
+.swiper-item {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	/*overflow-y: scroll;*/
+}
+.canvas {
+	width: 100%;
+}
+.noppt {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.noppt-img {
+	width: 160rpx;
+	height: 90rpx;
+	margin: 0 auto;
+}
+.noppt-img2 {
+	width: 160rpx;
+	height: 90rpx;
+}
+.noppt-text {
+	color: #b7b7b7;
+	font-size: 24rpx;
+	height: 40rpx;
+	margin-top: -40rpx;
+	display: block;
+}
+/*.canvasFull {
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 100%;
+	background-color: #000;
+	opacity: 0.6;
+	position: absolute;
+	bottom: 40rpx;
+	right: 30rpx;
+	z-index: 999;
+}*/
+.documentUrl {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/*.canvasToFull {
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	top: 10rpx;
+	left: 10rpx;
+}*/
+
+.tryView {
+	width: 180rpx;
+	height: 120rpx;
+	background-color: red;
+  	position: absolute;
+  	right: 0;
+  	top: 290rpx;
+  	color: #fff;
+  	opacity: 1;
+}
+
+
+.qnaire {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	/*z-index: 999;*/
+	background-color: #fff;
+	overflow-y: scroll;
+}
+.naire-title {
+	height: 90rpx;
+	line-height: 90rpx;
+	color: #0078d7;
+	font-size: 30rpx;
+	padding-left: 30rpx;
+	position: relative;
+}
+.naire-close {
+	width:26rpx;
+	height:26rpx;
+	line-height: 26rpx;
+	position:absolute;
+	padding:10rpx;
+	top: 22rpx;
+	right: 22rpx;
+
+}
+.naire-point {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 22rpx;
+	color: #ff665d;
+	padding-left: 30rpx;
+	background-color: #ffe7e6;
+	border-top: #e6e6e6;
+}
+.naire-single, .naire-multiple, .naire-area {
+	padding-left: 30rpx;
+	padding-right: 20rpx;
+	margin-bottom: 30rpx;
+}
+
+.single-title {
+	line-height: 38rpx;
+	font-size: 26rpx;
+	color: #666; 
+	white-space: normal;
+}
+.single-item {
+	position: relative;
+	margin-top: 26rpx;
+}
+.single-choose {
+	width: 44rpx;
+	height: 44rpx;
+	position: absolute;
+}
+.single-text {
+	font-size: 26rpx;
+	color: #666;
+	line-height: 44rpx;
+	white-space: normal;
+	padding-left: 56rpx;
+	word-break: break-all;
+}
+
+.naire-submit {
+	width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+	position: fixed;
+	z-index: 1000;
+	background-color: #fff;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+}
+.submit-button {
+	width: 370rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 26rpx;
+	margin: 20rpx auto;
+	background-color: #0078d7;
+	border-radius: 80rpx;
+	color: #fff;
+}
+.qnArea {
+	height: 120rpx;
+	width: 650rpx;
+	font-size: 24rpx;
+	min-height: 120rpx;
+	border: 2rpx solid #cecece;
+	margin-top: 20rpx;
+	padding:6rpx 10rpx;
+	word-break: break-all;
+}
+
+.result-text {
+	font-size: 26rpx;
+	color: #666;
+	line-height: 44rpx;
+	white-space: normal;
+	display: flex;
+}
+.resultNum {
+	display: block;
+    width: 48rpx;
+    text-align: center;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+.resultPro {
+	flex: 1.0;
+	padding-top: 4rpx;
+}
+.proOut {
+ 	border: 1px solid #dedddd;
+    border-radius: 16rpx;
+    background-clip: padding-box;
+    background-color: #f4f4f4;
+    height: 16rpx;
+    font-size: 0;
+    line-height: 16rpx;
+    margin-top: 10rpx;
+    position: relative;
+}
+.proIn {
+	position: absolute;
+    height: 16rpx;
+    left: 0;
+    font-size: 0;
+    line-height: 16rpx;
+    border-radius: 16rpx;
+    background-color: #0078d7;
+}
+.resultTotal {
+	width: 80rpx;
+    display: block;
+    text-align: right;
+    line-height: 20px;
+    overflow: hidden;
+}
+.areaResult {
+	font-size: 24rpx;
+	color: #0078d7;
+	margin-left: 32rpx;
+	margin-top: 10rpx;
+}
+.showTrue {
+	height: 28rpx;
+	line-height: 28rpx;
+	color: #fff;
+    font-size: 18rpx;
+    border-radius: 6rpx;
+    margin-top: 6rpx;
+    display: block;
+	width: 50rpx;
+	text-align: center;
+}
+.showTrueBg {
+	background-color: #0078d7;
+}

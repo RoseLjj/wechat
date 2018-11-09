@@ -1,0 +1,36 @@
+/* pages/subsubjects/subsubjects.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+.select-subject{
+  height: 765rpx;
+  margin-top: 0;
+}
+
+.subject-list{
+  margin-bottom: 30rpx;
+}
+
+.bottom-tips{
+  padding: 0 20rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-top: 20rpx;
+  top: 80rpx;
+  z-index: 10;
+  width: 286rpx; 
+  right: 0;
+}
+
+.bottom-tips::before{
+  content: "";
+  position: absolute;
+  width:0;
+  height:0;
+  border-style:solid;
+  top:-26rpx;
+  border-width:20rpx 0 20rpx 20rpx;
+  border-color:transparent transparent transparent #F8CD4B;
+  left: -2rpx;
+  transform: rotate(135deg);
+}

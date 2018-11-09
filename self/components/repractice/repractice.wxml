@@ -1,0 +1,4 @@
+<!--components/repractice/repractice.wxml-->
+<view class="go-back">
+  <view class="repractice bgc-white fsz-16 color-1ADAAF fw-700">重新练习</view>
+</view>

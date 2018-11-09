@@ -1,0 +1,122 @@
+/* 充值 */
+.myMoney .recharge{
+  width:60rpx;
+  height: 60rpx;
+}
+
+.myMoney{
+  /* width:240rpx; */
+  height: 60rpx;
+  background-color: #fff;
+  line-height: 60rpx;
+  position: relative;
+  margin-left: 20rpx;
+  display: inline-block;
+  padding-right: 50rpx;
+}
+
+.myMoney text{
+  font-size: 24rpx;
+  color:#1ADAAF;
+  line-height: 60rpx;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  top:-20rpx;
+  padding-left: 10rpx;
+  min-width: 120rpx;
+}
+
+/* 科目,子科目 */
+
+.select-subject{
+  display: inline-block;
+  width: 710rpx;
+  text-align: center;
+  background-image: linear-gradient(-180deg, rgba(106,176,183,1) 0%, rgba(100,65,109,1) 80%);
+  padding-top: 40rpx;
+  /* margin-top: 32rpx;  */
+  position: relative;
+}
+
+.subject-list{
+  margin: 12rpx 0;
+  width: 678rpx;
+  height: 96rpx;
+  text-align: center;
+  background-color: #5D3367;
+  line-height: 96rpx;
+  display: inline-block;
+  color:#fff;
+  font-size: 32rpx;
+  position: relative;
+}
+
+.pos-continue{
+  width: 710rpx;  
+  position: relative;
+  display: inline-block;
+  height: 64rpx;
+}
+
+.pos-continue text{
+  font-size: 26rpx;
+  color: #F8CD4B;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 13rpx;
+  left: 0;
+}
+
+.jianbian{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64rpx;
+}
+
+.getDiamond{
+  width: 710rpx;  
+}
+
+/* 错题集 */
+.mistakes-question{
+  text-align: right;
+  width: 100%;
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+}
+.mistakes-question button{
+  display: inline-block;
+  width: 160rpx;
+  height: 52rpx;
+  font-size: 28rpx;
+  color:#fff;
+  background-color: #FF7474;
+  padding: 0px;
+  border-radius: 0;
+  line-height: 52rpx;
+  margin-right: 20rpx;
+}
+
+/* 返回 */
+.go-back{
+  margin-left: 28rpx;
+  float: left;
+}
+.go-back image{
+  width: 100rpx;
+  height: 80rpx;
+}
+
+
+/* 查看解析 */
+.repractice{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}

@@ -1,0 +1,56 @@
+<!--pages/practice/signup/signup.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+  <!-- 报名 -->
+  <view class="select-subject">
+    <view class="bmxx">报名信息</view>
+    <view class="user-info">
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">姓名：</view>
+        <view class='fr color-384A46'>张三</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">手机号：</view>
+        <view class='fr color-384A46'>13888888888</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">微信号：</view>
+        <view class='fr color-384A46'>zhansanweixin</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">邮箱：</view>
+        <view class='fr color-384A46'>zhangsan@qq.com</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">是否参加过雅思考试：</view>
+        <view class='fr color-384A46'>是</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">是否需要考试相关讲解：</view>
+        <view class='fr color-384A46'>是</view>
+      </view>
+      <view class="user-info-list clearfix">
+        <view class="fl color-1ADAAF">考试时间：</view>
+        <view class='fr color-384A46'>2018年10月14日</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

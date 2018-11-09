@@ -1,0 +1,155 @@
+<!--components/chant/chant.wxml-->
+<view class="chatMain">
+  <!-- 有聊天 -->
+  <scroll-view wx:if="{{condition}}" class="nochat" style="height: {{lheight-50}}px" scroll-y='true' scroll-top="{{scrollTop}}">
+    <view class="chat-info" id="chat-page">
+
+      <view class="chat-item" wx:key="*this" wx:for="{{showAllMessage}}" bindtap="_showPrichat" data-talkid="{{item.talkerId}}" data-talkname="{{item.talkerName}}">
+        <view class="topBorder"></view>
+        <view class="midBorder">
+          <image wx:if="{{item.senderRole % 2 == 1 && item.type!='sysMsg'}}" class="item-icon" src="../../assets/icons/organizer.png"></image>
+          <image wx:if="{{item.senderRole % 2 == 0 && item.type!='sysMsg'}}" class="item-icon" src="../../assets/icons/chat.png"></image>
+          <image wx:if="{{item.type=='sysMsg'}}" class="item-icon" src="../../assets/icons/sysMsg.png"></image>
+          <view wx:if="{{item.type=='public'}}" class="item-user others {{item.senderRole % 2 == 1 && item.type!='sysMsg'?'organizer':''}}">{{item.talkerName}}</view>
+          <view wx:if="{{item.type=='private'}}" class="item-user otherto">{{item.talkerName}} 对 {{item.senderTo}} 说</view>
+          <view wx:if="{{item.type=='sysMsg'}}" class="item-user sysme">{{item.talkerName}}</view>
+          <!-- <view class="item-time">{{item.time}}</view> -->
+        </view>
+        <text class="botBorder" decode="{{decode}}" style="{{item.style}}">{{item.msg}}</text>
+      </view>
+
+      <!-- <view class="chat-item">
+				<view class="topBorder"></view>
+				<view class="midBorder">
+					<image class="item-icon" src="../../assets/icons/organizer.png"></image>
+					<view class="item-user others">组织者</view>
+					<view class="item-time">08:02:32</view>
+				</view>
+				<label class="botBorder">
+					老师你说点啥
+				</label>
+			</view> -->
+
+      <!-- <view class="chat-item">
+        <view class="topBorder"></view>
+        <view class="midBorder">
+          <image class="item-icon" src="../../assets/icons/sysMsg.png"></image>
+          <view class="item-user sysme">系统消息</view>
+          <view class="item-time">08:02:32</view>
+        </view>
+        <label class="botBorder">
+          ffffffffffffffff
+        </label>
+      </view> -->
+
+      <!-- <view class="chat-item" bindtap="_showPrichat">
+        <view class="topBorder"></view>
+        <view class="midBorder">
+          <image class="item-icon" src="../../assets/icons/chat.png"></image>
+          <view class="item-user others">张三</view>
+          <view class="item-time">08:02:32</view>
+        </view>
+        <label class="botBorder">
+          dfeffffffffd
+        </label>
+      </view> -->
+
+      <!-- <view class="chat-item" bindtap="_showPrichat">
+				<view class="topBorder"></view>
+				<view class="midBorder">
+					<image class="item-icon" src="../../assets/icons/chat.png"></image>
+					<view class="item-user otherto">张三 对 我 说</view>
+					<view class="item-time">08:02:32</view>
+				</view>
+				<label class="botBorder">
+					dfeffffffffd
+				</label>
+			</view> -->
+
+      <!-- <view class="chat-item">
+        <view class="topBorder"></view>
+        <view class="midBorder">
+          <image class="item-icon" src="../../assets/icons/chat.png"></image>
+          <view class="item-user sysme">我</view>
+          <view class="item-time">08:02:32</view>
+        </view>
+        <label class="botBorder">
+          dfeffffffffd
+        </label>
+      </view> -->
+
+    </view>
+
+
+  </scroll-view>
+
+  <!-- 没有聊天 -->
+  <view wx:else class="nochat">
+    <view class="noChat-img">
+      <image src="../../assets/images/noChat.png" class="noChat-img2"></image>
+    </view>
+    <text class="noChat-text">快来说点什么吧</text>
+  </view>
+
+  <!-- 私聊 -->
+  <view class="pri-chat" style="height: {{lheight+44}}px" animation="{{animationData}}">
+    <view class="priTitle">正在和{{priTalkname}}私聊
+      <image src="../../assets/icons/closelv.png" class="closePri" bindtap="_closePrichat"></image>
+    </view>
+    <scroll-view class="priMain" style="height: {{lheight-50}}px" scroll-y='true' scroll-top="{{scrollTopPri}}">
+      <view class="pri-box" id="chatPri-page">
+        <view class="priChat-item" wx:key="*this" wx:for="{{priMessage}}" wx:if="{{item.talkerId == priTalkid}}">
+          <!-- <view wx:if="{{item.uid=='-1'}}" class="praChat-name tright">{{item.time}} {{item.talkerName}}</view>
+          <view wx:else class="praChat-name">{{item.talkerName}} {{item.time}}</view>
+
+          <view wx:if="{{item.uid=='-1'}}" class="praChat-content praChat-self right">{{item.msg}}</view>
+          <view wx:else class="praChat-content praChat-other">{{item.msg}}</view> -->
+
+
+          <view class="topBorder"></view>
+          <view class="midBorder">
+            <image wx:if="{{item.senderRole % 2 == 1 && item.type!='sysMsg'}}" class="item-icon" src="../../assets/icons/organizer.png"></image>
+            <image wx:if="{{item.senderRole % 2 == 0 && item.type!='sysMsg'}}" class="item-icon" src="../../assets/icons/chat.png"></image>
+            <image wx:if="{{item.type=='sysMsg'}}" class="item-icon" src="../../assets/icons/sysMsg.png"></image>
+            <view wx:if="{{item.type=='public'}}" class="item-user others {{item.senderRole % 2 == 1 && item.type!='sysMsg'?'organizer':''}}">{{item.talkerName}}</view>
+            <view wx:if="{{item.type=='private'}}" class="item-user otherto">{{item.talkerName}} 对 {{item.senderTo}} 说</view>
+            <view wx:if="{{item.type=='sysMsg'}}" class="item-user sysme">{{item.talkerName}}</view>
+            <!-- <view class="item-time">{{item.time}}</view> -->
+          </view>
+          <text class="botBorder" decode="{{decode}}" style="{{item.style}}">{{item.msg}}</text>
+
+        </view>
+
+
+      </view>
+
+
+
+      <!-- 别人说 -->
+      <!-- <view class="priChat-item">
+	    			<view class="praChat-name">大白 08:22:32</view>
+	    			<view class="praChat-content praChat-other">了大家手里的空间法律框架路上看到就浪费螺丝钉看见分厘卡圣诞节分厘卡就</view>
+	    		</view> -->
+
+      <!-- 自己说 -->
+      <!-- <view class="priChat-item">
+	    			<view class="praChat-name tright">08:22:32 我</view>
+	    			<view class="praChat-content praChat-self right">了大家手里的空间法律框架路上看到就浪费螺丝钉看见分厘卡圣诞节分厘卡就</view>
+	    		</view> -->
+  <!-- </view> -->
+  </scroll-view>
+</view>
+
+<view class="unchat" hidden="{{!showUnchat}}">{{unChatText}}</view>
+<view class="chat-bot">
+  <!-- <view class="chat-user" bindtap="_onlyMe">
+			<image src="{{onlySelf}}" class="onlyMe" hidden="{{!showSelf}}"></image>
+		</view> -->
+  <input class="chat-input" bindinput="_inputIn" id="inputIn" value="{{chatVal}}" cursor-spacing="12"></input>
+  <!-- <image class="chat-send" src="{{sendUrl}}" bindtap="_chatSend"></image> -->
+  <view class="chat-send" bindtap="_chatSend">发送</view>
+</view>
+
+
+
+</view>

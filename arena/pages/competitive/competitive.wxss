@@ -1,0 +1,21 @@
+/* pages/competitive/competitive.wxss */
+.arena-game-bgc{
+  width: 210rpx;
+  height: 204rpx;
+  background: #D8D8D8;
+}
+
+.arena-list-one .fr .arena-game-bgc image{
+  width: 54rpx;
+  height: 80rpx;
+  margin-top: 62rpx;
+}
+
+.arena-list {
+  height: 756rpx;
+}
+
+.arena-game-one3{
+  min-width: 254rpx;
+  padding: 0 30rpx;
+}

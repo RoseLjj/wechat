@@ -1,0 +1,255 @@
+/* pages/friends/friends.wxss */
+
+.arena-list-btn {
+  width: 710rpx;
+  display: inline-block;
+  padding: 16rpx;
+  background-image: linear-gradient(0deg, #63264f 0%, #63264f 100%);
+}
+
+.arena-list-bottom {
+  position: relative;
+  top: -20rpx;
+}
+
+.arena-btn-wxF {
+  width: 256rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: #ff7474;
+  border-radius: 200rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.arena-btn-sjp {
+  width: 402rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: #1adaaf;
+  border-radius: 200rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+/* 弹框 start*/
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #2c2;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 710rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background: #fff;
+  margin-left: -355rpx;
+  margin-top: -460rpx;
+  padding-bottom: 48rpx;
+  padding-top: 30rpx;
+}
+
+.modal-dialog .modal-tips {
+  text-align: center;
+}
+
+.modal-tips1 {
+  font-size: 36rpx;
+  color: #720a45;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.modal-tips2 {
+  font-size: 24rpx;
+  color: #c6c6c6;
+}
+
+.modal-dialog .modal-tips image {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -35rpx;
+  margin-top: -35rpx;
+}
+
+.arena-prop-box {
+  line-height: 112rpx;
+  /* height: 112rpx; *//* padding-top: 20rpx; */
+}
+
+.arena-prop-box:nth-of-type(1) {
+  margin-top: 30rpx;
+}
+
+.arena-prop-text1 {
+  display: inline-block;
+  font-size: 28rpx;
+  color: #c6c6c6;
+  vertical-align: top;
+  margin-left: 20rpx;
+}
+
+.arena-prop-num {
+  text-align: center;
+  /* padding: 6rpx 12rpx; */
+  position: absolute;
+  top: -20rpx;
+  right: -10px;
+  background: #ff6551;
+  border-radius: 50%;
+  font-size: 28rpx;
+  display: inline-block;
+  color: #fff;
+}
+
+.arena-prop-num1 {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.arena-prop-num2 {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.arena-prop-num3 {
+  width: 66rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+}
+
+.arena-prop-num4 {
+  width: 76rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+}
+
+.arena-prop-img1 {
+  width: 112rpx;
+  height: 112rpx;
+}
+
+.arena-prop-img2 {
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 30rpx;
+  margin-left: 68rpx;
+}
+
+.arena-prop-img3 {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 16rpx;
+}
+
+.modal-close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}
+
+.modal-content {
+  height: 600rpx;
+  border-top: 2rpx solid #f0f0f0;
+  padding: 32rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.modal-title {
+  text-align: center;
+  margin-top: 120rpx;
+  font-size: 32rpx;
+  color: #384a46;
+  padding: 0 40rpx;
+}
+
+.modal-footer {
+  font-size: 34rpx;
+  text-align: center;
+}
+
+.btn-cancel {
+  width: 100%;
+  font-size: 26rpx;
+  color: #c6c6c6;
+  text-align: center;
+}
+
+.btn-confirm {
+  display: inline-block;
+  width: 402rpx;
+  text-align: center;
+  background: #1adaaf;
+  height: 96rpx;
+  line-height: 96rpx;
+  color: #fff;
+  border-radius: 200rpx;
+}
+
+/* 弹框 end*/
+
+/* 等待好友进程 start */
+
+.wait-for-friends .modal-content {
+  border: none;
+  height: 200rpx;
+  padding: 40rpx 80rpx;
+  box-sizing: border-box;
+}
+
+.wait-for-friends .modal-content>view{
+  text-align: center;
+}
+
+.wait-for-friends {
+  height: 334rpx;
+  margin-top: -167rpx;
+}
+
+.user-pic1 {
+  width: 132rpx;
+  height: 132rpx;
+  border: 6rpx solid #ff6551;
+}
+
+.user-pic3 {
+  display: inline-block;
+  width: 144rpx;
+  height: 144rpx;
+  line-height: 144rpx;
+  background: #c6c6c6;
+  font-size: 28rpx;
+  color: #fff;
+  vertical-align: top;
+}
+
+.user-pic2 {
+  width: 120rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+
+/* 等待好友进程 end */

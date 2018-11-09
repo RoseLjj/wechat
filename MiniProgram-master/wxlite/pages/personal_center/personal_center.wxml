@@ -1,0 +1,42 @@
+<!--pages/personal_center/personal_center.wxml-->
+<view class="container">
+  <view class="personal_info">
+    <view class="personal_headimg">
+      <image src="../../images/nan.png"></image>
+    </view>
+    <view class="personal_name_wrap">
+      <text class="personal_name">小张三</text>
+      <view class="personal_sex nan"></view>
+    </view>
+    <view class="lv_wrap" bindtap="lv_click">
+      <text>初出茅庐</text>
+      <view class="lv_tip">></view>
+    </view>
+    <view class="personal_center_btnWrap">
+      <view class="edit_info btn">编辑资料</view>
+      <view class="purchase_history btn">购课记录</view>
+      <view class="purchase_message btn">消息通知</view>
+    </view>
+  </view>
+  <!-- 人物形象轮播 -->
+  <view class="personal_image">
+    <swiper class='swiperClass' display-multiple-items="1" indicator-color="#a39f99" indicator-active-color="#f49641"  interval="2000" duration="1000" previous-margin="237rpx" next-margin="237rpx" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item class="swiper-item">
+    <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+    </image>
+    </swiper-item>
+    </block>
+    </swiper>
+  </view>
+
+  <view class="personal_footer clearfix">
+    <view class="return_btn fl">
+      <image src="../../images/return_img.png"></image>
+    </view>
+    <view class="setting_btn fl" bindtap="personal_setting">
+      <image src="../../images/shezhi.png"></image>
+    </view>
+    <view class="quit_btn fr">退出</view>
+  </view>
+</view>

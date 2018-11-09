@@ -1,0 +1,89 @@
+/* pages/subject/subject.wxss */
+
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+.subject-list-box{
+  height: 645rpx;
+  text-align:left;
+}
+
+.subject-list view{
+  display: inline-block;
+}
+
+.subject-list view.left-tips{
+  left: 0rpx;
+}
+
+.subject-list view.right-tips{
+  width: 328rpx;
+  right: 0;
+  bottom: 16rpx;
+  box-sizing: border-box;
+}
+
+.list-tips{
+  padding: 0 20rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-top: 20rpx;
+  font-size: 22rpx; 
+  position: absolute;
+}
+
+.subject-list .list-tips::after{
+  content: "";
+  position: absolute;
+  width:0;
+  height:0;
+  border-style:solid;
+  top:0px;
+}
+
+.subject-list{
+  width:328rpx;
+  height: 328rpx;
+  line-height: 328rpx;
+  margin: 10rpx;
+  font-size: 40rpx;
+}
+
+
+.subject-list view.left-tips::after{
+  border-width:28rpx 0 28rpx 20rpx;
+  border-color:transparent transparent transparent #FF7474;
+  right:-19rpx;
+}
+
+.subject-list .right-tips::after{
+  border-width:28rpx 20rpx 28rpx 0;
+  border-color:transparent  #F8CD4B transparent transparent;
+  /* left:-19rpx; */
+}
+
+/* 继续上次答题 */
+.continue-questions{
+  min-height: 96rpx;
+}
+.continue-questions button{
+  width: 678rpx;
+  height: 96rpx;
+  border-radius: 100rpx;
+  line-height: 96rpx;
+  color:#fff;
+  font-size: 32rpx;
+  background-color: #1ADAAF;
+  margin-top: 78rpx;
+}
+
+.select-subject{
+  display: inline-block;
+  width: 710rpx;
+  text-align: center;
+  background-image: linear-gradient(-180deg, rgba(106,176,183,1) 0%, rgba(100,65,109,1) 80%);
+  padding-top: 40rpx;
+  /* margin-top: 32rpx;  */
+  position: relative;
+
+}

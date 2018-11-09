@@ -1,0 +1,85 @@
+<!--pages/courseCenter/courseCenterDetails/courseCenterDetails.wxml-->
+
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+
+
+  <view class='content' bindtap='showList'>
+    <view class='courseName'>{{courseTitleName}}</view>
+    <!-- <view class='xianshang'></view> -->
+    <view class='imageJiantouView' >
+      <image class='imagejiantou' src='{{imagejiantou}}'></image>
+    </view>
+    <!-- 列表 -->
+    <view class='list' hidden="{{listShow}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}"  >
+        <view bindtap="chooseClass" data-index="{{item.id}}">
+          <view class='listView'>
+            <view class='titleView'>
+              <text class='title'>{{item.titleName}}</text>
+            </view>
+            <!-- 雅思听力  课时数量 -->
+            <view class='chooseTypeView'>
+              <view class='chooseType1'>{{item.chooseTitle1}}</view>
+              <view class='chooseType2'>{{item.chooseTitle2}}</view>
+            </view>
+            <!-- 金额 -->
+            <view class='moneyView'>
+              <text class='textLeft moneyViewItem'>{{item.left}}</text>
+              <text class='textCenter moneyViewItem'>{{item.center}}</text>
+              <text class='textRight moneyViewItem'>{{item.right}}</text>
+            </view>
+          </view>
+          <view class='xianxia'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class=' detailsCourse'>
+    <view class='detailsTitle'>课程详情</view>
+    <view class='detailsItem'>
+      <text>科目：</text>
+      <text>{{course.name}}</text>
+    </view>
+    <view class='detailsItem'>
+      <text>类型：</text>
+      <text>{{course.type}}</text>
+    </view>
+    <view class='detailsItem'>
+      <text>课时数量：</text>
+      <text>{{course.numberClass}}</text>
+    </view>
+    <view class='detailsItem'>
+      <text>授课方式：</text>
+      <text>{{course.typeClass}}</text>
+    </view>
+    <view class='moneyView'>
+      <text class='textLeft moneyViewItem'>{{course.left}}</text>
+      <text class='textCenter moneyViewItem'>{{course.center}}</text>
+      <text class='textRight moneyViewItem'>{{course.right}}</text>
+    </view>
+    <view class='introduction'>
+      <text>课程简介:</text>
+      <text>{{course.introduction}}</text>
+    </view>
+  </view>
+  <view class='price'>
+    <text>应付款：</text>
+    <text>￥{{course.price}}</text>
+  </view>
+  <button class='goToPay'>去支付</button>
+  <text class='chooseClass' bindtap='questionnaire'>没有合适的课程?</text>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>

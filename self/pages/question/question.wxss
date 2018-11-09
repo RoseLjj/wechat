@@ -1,0 +1,4 @@
+/* pages/question/question.wxss */
+@import '../../common/common.wxss';
+
+

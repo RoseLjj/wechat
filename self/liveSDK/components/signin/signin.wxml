@@ -1,0 +1,15 @@
+<!--components/signin/signin.wxml-->
+<cover-view class="hover" hidden="{{!isShowSignin}}"></cover-view>
+
+<cover-view class="signin" hidden="{{!isShowSignin}}">
+	<cover-view class="signin-title">
+		<cover-view class="tit-text">点名</cover-view>
+		<cover-image class="tit-image" hidden="{{closeHidden}}" src="../../assets/icons/close.png" bindtap="_hideSignin"/>
+	</cover-view>
+
+	<cover-view class="signin-main">
+		<cover-view class="mainText" style="font-size: {{usualPx}}rpx;">{{signTime}}</cover-view>
+		<cover-view class="check-in" bindtap="_checkTap" hidden="{{!isShowBtn}}">{{checkBtn}}</cover-view>
+	</cover-view>
+
+</cover-view>

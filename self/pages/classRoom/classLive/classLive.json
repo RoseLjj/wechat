@@ -1,0 +1,12 @@
+{
+	"usingComponents":{
+		"sysMessage": "../../../liveSDK/components/sysMessage/sysMessage",
+		"chat": "../../../liveSDK/components/chat/chat",
+		"qa": "../../../liveSDK/components/question/question",
+		"lottery": "../../../liveSDK/components/lottery/lottery",
+		"answerCard": "../../../liveSDK/components/answerCard/answerCard",
+		"signin": "../../../liveSDK/components/signin/signin"
+
+	},
+  "disableScroll": true
+}

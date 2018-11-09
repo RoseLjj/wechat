@@ -1,0 +1,43 @@
+<!--pages/courseCenter/courseList/courseList.wxml-->
+
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+
+<view class='list'>
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <view class='listView' data-index='{{item.id}}' bindtap='chosseClass'>
+    <view class='titleView'>
+      <text class='title'>{{item.titleName}}</text>
+    </view>
+
+    <view class='chooseTypeView'>
+      <view class='chooseType1'>{{item.chooseTitle1}}</view>
+      <view class='chooseType2'>{{item.chooseTitle2}}</view>
+    </view>
+
+    <view class='moneyView'>
+      <text class='moneyViewItem'>{{item.left}}</text>
+      <text class='moneyViewItem'>{{item.center}}</text>
+      <text class='moneyViewItem'>{{item.right}}</text>
+    </view>
+
+  </view>
+  </block>
+</view>
+
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+

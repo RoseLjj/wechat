@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+  <view class="contact_kefu">
+    <button class="contact_kefu_btn" bindtap="contact_kefu">联系客服</button>
+  </view>
+  <view class="personal_center">
+    <button class="personal_center_btn" bindtap="personal_center">个人中心</button>
+  </view>
+  <view class="zhibo">
+    <button class="zhibo_btn" bindtap="zhibo">直播</button>
+  </view>
+
+</view>

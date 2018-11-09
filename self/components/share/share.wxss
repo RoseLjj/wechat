@@ -1,0 +1,2 @@
+/* components/share/share.wxss */
+@import '../component.wxss';

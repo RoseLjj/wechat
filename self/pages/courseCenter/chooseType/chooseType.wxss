@@ -1,0 +1,109 @@
+/* pages/courseCenter/chooseType/chooseType.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+
+.background{
+  background-color: #FFF7DD;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.navView {
+  width: 100%;
+  height: 64px;
+  background-color: #1ADAAF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleLabel {
+  width: 100%;
+  margin-top: 20px;
+  overflow:hidden; 
+
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: -0.43px;
+
+  text-overflow:ellipsis;
+  white-space:nowrap;  
+  text-align:center;
+}
+
+
+.topView{
+  margin: 40rpx 40rpx 40rpx 40rpx;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.topTitle{
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #F68314;
+  letter-spacing: -0.43px;
+}
+
+
+.titleType{
+  top: 0rpx;
+  margin-left: 40rpx;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.titleTypeName{
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #1ADAAF;
+}
+
+
+.courseList{
+  margin: 32rpx 40rpx 0rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+.courseTypeName{
+  margin: 0rpx 0rpx 40rpx 0rpx;
+
+  border-radius: 100px;
+  height: 80rpx;
+
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  letter-spacing: 0;
+
+  background: #FFFFFF;
+  color: #384A46; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  background-color: #1ADAAF;
+  color: white;
+}
+
+
+.next{
+  margin-top: 48rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1ADAAF;
+  
+  height: 96rpx;
+  color: white;
+  background: #1ADAAF;
+  border-radius: 100px;
+
+}
+
+
+

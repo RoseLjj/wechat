@@ -1,0 +1,199 @@
+/* pages/play/play.wxss */
+.clearfix {
+clear:both;
+overflow:hidden;
+zoom:1;
+}
+
+.container{
+  color: #292929;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.bottom_box
+{
+  position: relative;
+  width: 30px; 
+  height: 50px; 
+  margin-left:calc(100% / 14 - 15px); 
+  margin-right:calc(100% / 14 - 15px);
+  display:inline-block;
+}
+
+.bottom_button
+{
+  display:inline-block;
+  position: absolute;
+  width: 30px; 
+  height: 30px; 
+}
+
+.bottom_button :active
+{
+  opacity: 0.55
+}
+
+.bottom_text
+{
+  position: absolute;
+  display:inline-block;
+  color: #ffffff;
+  width: 100%;
+  font-size:10px;
+  bottom: 0;
+  text-align: center;
+}
+.zhibo_top{
+  width: 100%;
+  height: 128rpx;
+  background: #1ADAAF;
+  position: relative;
+}
+.zhibo_top .return_page{
+  width: 64rpx;
+  height: 64rpx;
+  position: absolute;
+  left: 32rpx;
+  bottom: 16rpx;
+}
+.zhibo_top .return_page image{
+  width: 100%;
+  height: 100%;
+}
+.zhibo_title_wrap{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  padding-right: 80rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  position: relative;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.zhibo_title_wrap .fankui{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 16rpx;
+  right: 24rpx;
+}
+.zhibo_content_top{
+  width: 100%;
+}
+
+/* footer */
+.box_footer {
+  width:100%;
+  background:#fff;
+  min-height:80rpx;
+  padding:20rpx 0;
+  position:absolute;
+  bottom:0;
+  left:0;
+
+  }
+  .footer_content{
+    position:relative;
+    width:100%;
+
+  }
+  .tach_input{
+    width:580rpx;
+    min-height:80rpx;
+    margin-left:20rpx;
+  }
+  .tach_input textarea {
+    width:100%;
+    background:#f5f5f5;
+    min-height:80rpx;
+    box-sizing:border-box;
+    padding:0 20rpx;
+  }
+  .send_btn {
+    width:116rpx;
+    height:80rpx;
+    color:#fff;
+    font-size:32rpx;
+    text-align:center;
+    line-height:80rpx;
+    position:absolute;
+    right:20rpx;
+    bottom:0;
+  }
+  .send_btn.gry_btn {
+    background:#c6c6c6;
+  }
+  .send_btn.gre_btn {
+    background:#1ADAAF;
+  }
+  .message_content_wrap{
+    display: flex;
+    height: 100%;
+    width:100%;
+    padding-bottom:100rpx;
+    background-color:#f5f5f5;
+    padding-bottom: 120rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+  }
+  .zhibo_xian{
+    height: 100%;
+    border-left: 1px solid #c6c6c6;
+    position: relative;
+    left: 20rpx;
+  }
+  .message_ul_wrap{
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+  }
+  .message_ul{
+    /* overflow-y: auto; */
+    height: 100%;
+    width: 100%;
+  }
+  .message_li{
+    width: 100%;
+    position: relative;
+    background: transparent;
+    margin-top: 36rpx;
+  }
+  .user_head{
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+  }
+  .user_head image{
+    width: 100%;
+    height: 100%;
+  }
+  .user_name{
+    font-size: 24rpx;
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-left: 12rpx;
+    max-width: 600rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .message_content{
+    font-size: 28rpx;
+    margin-left: 52rpx;
+    width: 620rpx;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+
+

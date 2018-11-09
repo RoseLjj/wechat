@@ -1,0 +1,41 @@
+/* pages/practice/signSuc/signSuc.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+.select-subject {
+  background: #fff;
+  min-height: 930rpx;
+}
+
+.suc-info-box {
+  padding: 240rpx 0;
+}
+
+.suc-info {
+  line-height: 60rpx;
+  vertical-align: top;
+  margin-left: 30rpx;
+}
+
+.success {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.teacher-info {
+  width: 532rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  color: #ff7474;
+  line-height: 48rpx;
+}
+
+.fanhui button{
+  width: 480rpx;
+  height: 96rpx;
+  background: #1adaaf;
+  border-radius: 100px;
+  line-height: 96rpx;
+  color:#fff;
+  margin-top: 80rpx;
+}

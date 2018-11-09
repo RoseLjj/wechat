@@ -1,0 +1,25 @@
+/* pages/practice/signup/signup.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+.select-subject {
+  background: #fff;
+  min-height: 930rpx;
+}
+
+.bmxx {
+  font-size: 36rpx;
+  color: #1adaaf;
+  margin-bottom: 50rpx;
+}
+
+.user-info {
+  padding: 32rpx;
+  font-size: 32rpx;
+}
+
+.user-info-list{
+  border-bottom: 1px solid #F0F0F0;
+  margin-bottom: 40rpx;
+  padding-bottom: 10rpx;
+}

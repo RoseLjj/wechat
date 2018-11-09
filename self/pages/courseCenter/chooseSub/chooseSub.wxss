@@ -1,0 +1,70 @@
+/* pages/courseCenter/chooseSub/chooseSub.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+.list {
+  margin: 24rpx 20rpx 0 20rpx;
+  height: 79.5%;
+  overflow-y: auto;
+  background: linear-gradient(#fffcf0 0%, #fff7dd 93%, rgba(255, 255, 255, 0) 100%);
+  padding: 32rpx 16rpx 0 16rpx;
+  text-align: left;
+}
+
+.listView {
+  display: inline-block;
+  background: #7bc6cc;
+  width: 48%;
+  margin-bottom: 4%;
+  /* position: relative; *//* padding:24% 0 ; */
+}
+
+.listBox {
+  height: 83%;
+  overflow-y: auto;
+}
+
+.listBtn {
+  margin: 32rpx 0;
+  height: 10%;
+  text-align: center;
+}
+
+.listBtn button {
+  width: 90%;
+  height: 96rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background: #1adaaf;
+  border-radius: 60rpx;
+  line-height: 96rpx;
+}
+
+.listView:nth-child(2n) {
+  margin-left: 4%;
+}
+
+.item {
+  /* position: absolute; */
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.nameView {
+  font-size: 36rpx;
+  padding: 25% 0 1% 0;
+  color: #fff;
+}
+
+.titleView {
+  color: #1adaaf;
+  font-size: 24rpx;
+  padding: 10% 0;
+}
+
+.numView {
+  color: #FFE888;
+  font-size: 24rpx;
+  margin-bottom: 20%;
+}

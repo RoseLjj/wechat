@@ -1,0 +1,174 @@
+/* pages/taskRank/taskList/taskList.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+.backgroundImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(0deg, #E9EEF5 0%, #B7D0DA 100%);
+}
+
+.changeView {
+  background-color: #7BC6CC;
+  width: 100%;
+  height: 96rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 0rpx 0rpx 36rpx;
+}
+
+.buttonView {
+  width: 140rpx;
+  height: 64rpx;
+  margin-left: 4rpx;
+  font-size: 30rpx;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: PingFangSC-Regular;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.selectButton {
+  background-color: #1ADAAF;
+  font-family: PingFangSC-Medium;
+}
+
+.task-list-view {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: white;
+}
+
+.task-list-box {
+  width: 100%;
+  height: 894rpx;
+}
+
+.task-list-item {
+  width: 100%;
+  height: 132rpx;
+  margin-bottom: 20rpx;
+}
+
+.richang-item {
+  height: 112rpx;
+}
+
+.itemRedview {
+  background-color: #FF7474;
+  height: 40rpx;
+  width: 168rpx;
+  font-size: 24rpx;
+  margin-left: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 900;
+  position: absolute;
+}
+
+.itemWhiteView {
+  background-color: white;
+  height: 112rpx;
+  position: absolute;
+  margin-top: 20rpx;
+  left: 28rpx;
+  right: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.richangItemWhitView {
+  margin-top: 0rpx;
+}
+
+.itemLeftView {
+  margin-top: 32rpx;
+  padding-left: 20rpx;
+}
+
+.prize {
+  margin-left: 16rpx;
+  width: 64rpx;
+  height: 64rpx;
+  background-color: #FFE888;
+}
+
+.left-content {
+  color: #384A46;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+}
+
+.itemRightView {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.zuanshiNumber {
+  color: #F8CD4B;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+}
+
+.zuanshi {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+.qiandao {
+  width: 104rpx;
+  height: 54rpx;
+  font-size: 28rpx;
+}
+
+.qiandao1 {
+  background-color: #c6c6c6;
+}
+
+
+/* 奖励提示框 */
+.prizeBgView {
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.prizeView {
+  width: 360rpx;
+  height: 288rpx;
+  margin-left:196rpx;
+  margin-top:552rpx;
+  display:flex;
+  justify-content:center; 
+}
+
+.prizeViewBgImage {
+  width: 360rpx;
+  height: 288rpx;
+  position: absolute;
+  z-index: -1;
+}
+
+.prizeContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: white;
+}

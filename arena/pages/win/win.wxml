@@ -1,0 +1,73 @@
+<!--pages/win/win.wxml-->
+<!-- PK竞技场-结束 -->
+<view class="arena-backgroundImg">
+  <image src='{{bgcImg[0]}}'></image>
+</view>
+<!-- 四叶草 -->
+<clover cloverNumber="{{cloverNumber}}" />
+<!-- 我的战绩 -->
+<view class='arena-my-grand'>
+  <!-- winmer -->
+  <view class='arena-win-box'>
+    <view class="arena-win-portrait">
+      <image class='arena-portrait-guan' src='{{bgcImg[19]}}'></image>
+      <image class='arena-portrait-img' src='{{winner_portrait}}'></image>
+    </view>
+    <view class='"arena-win-info"'>
+      <view class='arena-win-name'>{{winner_name}}</view>
+      <view class='arena-win-ques'>
+        <view>答对: {{winner_num}}题</view>
+        <view>得分: +{{winner_fen}}</view>
+      </view>
+    </view>
+    <view class='fr' wx:if="{{!winner_isMe}}">
+      <image class="arena-dianzan" src='{{bgcImg[20]}}'></image>
+    </view>
+  </view>
+
+  <view wx:if="{{isWin}}" class="arena-you-win">YOU WIN</view>
+  <view wx:if="{{!isWin}}" class="arena-you-defeat">YOU LOSE</view>
+
+  <!-- loser -->
+  <view class='arena-win-box arena-lose-box'>
+  
+    <view class='fl'  wx:if="{{winner_isMe}}">
+      <image class="arena-dianzan" src='{{bgcImg[20]}}'></image>
+    </view>
+    <view class='arena-win-info arena-win-info-right fr'>
+      <view class='arena-win-name'>{{loser_name}}</view>
+      <view class='arena-win-ques'>
+        <view>答对: {{loser_num}}题</view>
+        <view>得分: +{{loser_fen}}</view>
+      </view>
+    </view>
+    <view class="arena-win-portrait fr">
+      <image class='arena-portrait-img' src='{{loser_portrait}}'></image>
+    </view>
+
+  </view>
+
+  <!-- 活跃度 -->
+  <view class='arena-active-box clearfix'>
+    <view class='fl'>活跃度 +{{extra_active_score}}</view>
+    <view class='fr'>竞技得分额外 +{{extra_honor_score}}</view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="arena-footer">
+  <!-- 返回 -->
+  <goBack/>
+  <!-- 分享 -->
+  <view class='arena-bottom-btn arena-share'>
+    <button open-type='share'><image src='{{bgcImg[18]}}'></image></button>
+  </view>
+  <view class='arena-bottom-btn fr arena-btn-record'>
+    <view class="arena-btn-text">
+      <view>查看答题记录可额外获得</view>
+      <image src='{{bgcImg[17]}}'></image>
+      <view>× 200</view>
+    </view>
+    <button>查看答题记录</button>
+  </view>
+</view>

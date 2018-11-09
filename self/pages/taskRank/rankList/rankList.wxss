@@ -1,0 +1,415 @@
+/* pages/taskRank/rankList/rankList.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+.backgroundImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(0deg, #e9eef5 0%, #b7d0da 100%);
+}
+
+/* titlebar 父布局 */
+
+.title_bar_parent {
+  display: flex;
+  height: 96rpx;
+  background-color: #7bc6cc;
+  align-items: center;
+  padding: 0rpx 0rpx 0rpx 36rpx;
+}
+
+.buttonView {
+  width: 140rpx;
+  height: 64rpx;
+  margin-left: 4rpx;
+  font-size: 30rpx;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: PingFangSC-Regular;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.selectButton {
+  background-color: #1adaaf;
+  font-family: PingFangSC-Medium;
+}
+
+/* parent_view */
+
+.parent_view {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 榜单列表 */
+
+.rank_list_parent {
+  margin-top: 36rpx;
+  display: flex;
+  flex-direction: column;
+  height: 766rpx;
+}
+
+/* 榜单 */
+
+.rank_item_parent {
+  margin-right: 28rpx;
+  margin-left: 28rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  flex-direction: row;
+  height: 128rpx;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 底部榜单 */
+
+.rank_bottom_parent {
+  margin-top: 16rpx;
+  height: 128rpx;
+  background-color: #7bc6cc;
+  margin-left: 14rpx;
+  margin-right: 14rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rank_bottom_icon_parent {
+  display: flex;
+  margin-left: 16rpx;
+}
+
+/* 底部榜单icon */
+
+.rank_bottom_icon {
+  width: 96rpx;
+  height: 96rpx;
+  background: #e3e3e3;
+}
+
+/* 底部榜单名词 */
+
+.rank_bottom_number {
+  background-color: #1adaaf;
+  width: 64rpx;
+  font-size: 28rpx;
+  color: #fff;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: -8rpx;
+}
+
+/* 垂直的 */
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical_margin_left_12 {
+  margin-left: 12rpx;
+}
+
+.vertical_margin_right_28 {
+  margin-right: 28rpx;
+}
+
+.vertical_margin_right_16 {
+  margin-right: 16rpx;
+}
+
+.vertical_margin_left_17_right_20 {
+  margin-left: 17rpx;
+  margin-right: 20rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.name_384A46 {
+  font-size: 28rpx;
+  color: #384a46;
+}
+
+/* 等级 */
+
+.grand {
+  margin-top: 16rpx;
+  background-color: #f8cd4b;
+  height: 40rpx;
+  width: 112rpx;
+  display: flex;
+  font-size: 24rpx;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.active_white {
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.active_number_white {
+  color: #fff;
+  font-size: 40rpx;
+}
+
+.active_green {
+  color: #1adaaf;
+  font-size: 22rpx;
+}
+
+.active_number_green {
+  color: #1adaaf;
+  font-size: 40rpx;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.rank_number {
+  background-color: #1adaaf;
+  width: 36rpx;
+  font-size: 28rpx;
+  color: #fff;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: -8rpx;
+}
+
+/* 胜率 */
+
+.right_rate {
+  font-size: 40rpx;
+  color: #1adaaf;
+}
+
+.right_rate_white {
+  color: #fff;
+}
+
+/* 用时 */
+
+.total_time {
+  font-size: 24rpx;
+  color: #f8cd4b;
+}
+
+.total_time_white {
+  color: #fff;
+}
+
+.zhengquelu {
+  font-size: 22rpx;
+  color: #1adaaf;
+}
+
+.zhengquelu_white {
+  color: #fff;
+}
+
+.zhengquelu_number {
+  font-size: 36rpx;
+  color: #1adaaf;
+}
+
+.zhengquelu_number_white {
+  color: #fff;
+}
+
+.vertical_view {
+  width: 1rpx;
+  height: 68rpx;
+  background-image: linear-gradient(0deg, #f8cd4b 100%, #f8cd4b 100%);
+}
+
+.vertical_view_white {
+  background-image: linear-gradient(0deg, #fff 100%, #fff 100%);
+}
+
+.mean_time {
+  color: #f8cd4b;
+  font-size: 22rpx;
+}
+
+.mean_time_white {
+  color: #fff;
+}
+
+.lingqu {
+  margin-top: 50rpx;
+  background-color: #1adaaf;
+  height: 96rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lingjiangtext {
+  font-size: 36rpx;
+  color: #fff;
+}
+
+/* //////////////////////////////////////////////////// */
+
+/* 领奖弹框 */
+
+.rankAwardBgView {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.rankAwardView {
+  background-color: white;
+  width: 590rpx;
+  height: 800rpx;
+  margin-left: 80rpx;
+  margin-top: 312rpx;
+}
+
+.awardImageView {
+  width: 192rpx;
+  height: 192rpx;
+  margin-top: -96rpx;
+  margin-left: 200rpx;
+  border-radius: 96rpx;
+  background-color: #1adaaf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.award {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.awardContentView {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #1adaaf;
+  display: flex;
+  flex-direction: column;
+}
+
+.paimingView {
+  margin-top: 128rpx;
+  margin-left: 32rpx;
+  line-height: 36rpx;
+  color: #acacac;
+}
+
+.paiming {
+  padding: 0rpx 10rpx 0rpx 10rpx;
+  margin-left: 20rpx;
+  background-color: #1adaaf;
+  color: white;
+}
+
+.infoView {
+  margin: 24rpx 24rpx 0rpx 24rpx;
+  background-color: #f0f0f0;
+  height: 288rpx;
+}
+
+.infoView1 {
+  margin-left: 16rpx;
+  margin-top: 16rpx;
+  display: flex;
+}
+
+.touxiang {
+  width: 64rpx;
+  height: 64rpx;
+  background-color: #dfdfdf;
+}
+
+.userName {
+  color: #384a46;
+  margin-left: 16rpx;
+  line-height: 64rpx;
+}
+
+.lineView {
+  background-color: #c6c6c6;
+  height: 1px;
+  margin: 16rpx 16rpx 16rpx 16rpx;
+}
+
+.infoView2 {
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  margin-bottom: 18rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shenglvView {
+  margin-top: -10rpx;
+  align-items: flex-end;
+}
+
+.leftLabel {
+  font-size: 22rpx;
+}
+
+.rightLabel {
+  color: #ff7474;
+  font-size: 22rpx;
+}
+
+.shenglv {
+  font-size: 36rpx;
+}
+
+.prizeView {
+  margin-left: 32rpx;
+  color: #384a46;
+  margin-top: 24rpx;
+}
+
+.prizeInfoView {
+  margin-top: 20rpx;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.zuanshiNumber {
+  color: #f8cd4b;
+  font-size: 36rpx;
+}
+
+.zuanshi {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}

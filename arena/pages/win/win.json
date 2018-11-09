@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "clover": "/components/clover/clover",
+      "goBack": "/components/goBack/goBack"
+    }
+}

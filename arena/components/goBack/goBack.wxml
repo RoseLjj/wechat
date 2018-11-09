@@ -1,0 +1,5 @@
+<!--components/goBack/goBack.wxml-->
+<!-- 返回 -->
+<view class="arena-bottom-btn">
+  <image src='{{bgcImg[12]}}'></image>
+</view>

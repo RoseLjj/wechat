@@ -1,0 +1,130 @@
+<!--pages/studyRoom/composite/composite.wxml-->
+<!-- 综合评分 -->
+<!-- 主题内容 -->
+<view class='backgroundAll bg-7BC6CC'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+
+  </view>
+  <!-- 科目 -->
+  <view class="posi-content">
+    <view class='margin-t16 posite'>
+      <!-- <view class="question-name fsz-14 bgc-FFF7DD color-1ADAAF ">{{test_name}}</view> -->
+      <view class="correct-box bgc-FFECB1">
+        <view class='bgc-FFF7DD'>
+          <view class='bgc-FFECB1 display-ib useTime fsz-14 color-FF7474'>综合评分</view>
+          <view class='color-1ADAAF fw-700 fsz-26 corate'>{{score}}分</view>
+          <view class="subject_list_box">
+            <view class="subject_list_one clearfix" wx:for="{{comprehensive_score}}" wx:key="{{index}}">
+              <view class="fl">{{item.subject_type_name}}:</view>
+              <view class="fr po-right">
+                <view class='weigai btn-sq' wx:if="{{item.is_apply==0}}" data-id="{{item.correct_id}}" bindtap='applayQue' data-sid="{{item.subject_type_id}}">申请批改</view>
+                <view class='yigai btn-sq' wx:if="{{item.is_apply==1}}">已申请批改</view>
+                <view class='getPig btn-sq' wx:if="{{item.is_apply==2}}" data-id="{{item.correct_id}}" data-name="{{item.subject_type_name}}" bindtap='getCorrectRecord'>批改记录</view>
+                <view wx:if="{{item.is_apply==4}}">{{item.score}}分</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 目标分数 -->
+    <view class='target-box '>
+      <view class="bgc-FFF7DD">
+        <view class="target-title">
+          <view class="fl">目标分数</view>
+          <view class="fr">
+            <view bindtap='editTargetFen'>修改</view>
+          </view>
+        </view>
+        <view>
+          <view class="target-fen atarge clearfix">
+            <view class="">综合评分:</view>
+            <view class="">{{target_score_fen}}分</view>
+            <view class="">{{target_score_cha}}</view>
+          </view>
+          <view class="target-fen-box">
+            <view class="clearfix atarge" wx:for="{{target_score}}" wx:key="{{index}}">
+              <view class="">{{item.subject_type_name}}：</view>
+              <view class="">{{item.score}}分</view>
+              <view class="">{{item.scorecha}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="country-box">
+      <view class="traget-country clearfix">
+        <view class="fl">目标国家：</view>
+        <view class="fr">{{target_country}}</view>
+      </view>
+    </view>
+
+    <!-- 分数线 -->
+    <!-- <view class='target-box '>
+      <view class="bgc-FFF7DD">
+        <view class="target-title">分数线更新时间 {{fractional_line_at}}</view>
+        <view>
+          <view class="target-fen-box">
+            <view class="clearfix">
+              <view class="fl">哈佛大学：</view>
+              <view class="fr">雅思 60分 托福 80分</view>
+            </view>
+            <view class="clearfix">
+              <view class="fl">哈佛大学：</view>
+              <view class="fr">雅思 60分 托福 80分</view>
+            </view>
+            <view class="clearfix">
+              <view class="fl">哈佛大学：</view>
+              <view class="fr">雅思 60分 托福 80分</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+<!-- <view bindtap='callback'>button</view> -->
+<!-- 弹框 -->
+<modal modalMeesage="{{modalMeesage}}" modalConfirm="{{modalConfirm}}" showModal="{{showModal}}" modalCancel="{{modalCancel}}" modalType="{{modalType}}" id="modal" />
+<!-- 批改记录 -->
+<record class="modal-record" record_marginTop="{{record_marginTop}}" wx:if="{{showRecordModal}}" showRecordModal="{{showRecordModal}}" recordArr="{{recordArr}}"/>
+
+<web-view wx:if="{{goUrl}}" src="{{goUrl}}"></web-view>
+
+<view class="modal2-mask" bindtap="closeModal2" catchtouchmove="preventTouchMove" wx:if="{{showModal2}}"></view>
+<view class="modal2-dialog" wx:if="{{showModal2}}" style='margin-top: {{marginTop}}'>
+  <view class="modal2-tips">目标分数修改</view>
+  <image class="modal2-close" src='{{bgcImg[1]}}' bindtap='closeModal2'></image>
+  <view class="modal2-content">
+    <view class="modal-zonghe modal-zonghe clearfix">
+      <view class="modal-left fl">综合分数</view>
+      <view class="modal-right fr">
+        <input type="number" value='{{tk_data.score}}' bindinput='kemuInput'/>
+      </view>
+    </view>
+    <view>
+      <view class="modal-zike clearfix" wx:for="{{tk_data.subject_type}}" wx:key="{{index}}">
+        <view class="modal-left fl">{{item.subject_type_name}}</view>
+        <view class="modal-right fr">
+          <input type="number" value='{{item.score}}' bindinput="zikeInput" data-index="{{index}}" data-id="{{item.subject_type_id}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="modal2-footer">
+    <view class="btn-cancel2" bindtap='closeModal2' data-status="cancel">取消</view>
+    <view class="btn-confirm2" bindtap="submitTarget" data-status="confirm">提交</view>
+  </view>
+</view>
+<view wx:if="{{isSuccess}}">目标分数修改成功</view>

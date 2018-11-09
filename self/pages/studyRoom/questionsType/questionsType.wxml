@@ -1,0 +1,42 @@
+<!--pages/quesionsType/questionsType.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+     <!-- 充值 -->
+     <view class="fl">
+       <money/>
+     </view>
+     <!-- 钻石 -->
+     <view class="fl">
+       <!-- <diamond/> -->
+     </view>
+  </view>
+  <!-- 错题集 -->
+  <mistakes/>
+  <!-- 科目 -->
+  <view>
+    <view class='getDiamond bgc-42666C height-38 margin-t16 color-white fsz-14 display-ib' wx:if='{{isHuo}}'>再做20道题可领取10钻石 +30活跃点</view>
+ <view class="select-subject">
+      <view class="subject-list " wx:for="{{subjectArr}}"  wx:key="{{index}}" data-index="{{index}}" bindtap='queryItemClick'>
+        <view class='subject-name'>{{item.name}}</view>
+        <view class="bottom-tips display-ib bgc-yellow text-a-left position-a fsz-11" wx:if="{{item.num>0}}">有{{item.num}}人正在答题</view>
+      </view>
+  </view>
+  <view class="pos-continue">
+  <image src='http://student.ryit.co/student/wechat/image/assets/jianbian.png' class="jianbian"></image>
+  </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>
+
+

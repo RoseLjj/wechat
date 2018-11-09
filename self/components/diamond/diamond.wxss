@@ -1,0 +1,11 @@
+/* components/diamond/diamond.wxss */
+@import "../component.wxss";
+
+
+/* 钻石 */
+.my-diamond{
+  padding-right: 20rpx;
+}
+.my-diamond text{
+  color:#F8CD4B;
+}

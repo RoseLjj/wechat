@@ -1,0 +1,41 @@
+<!--pages/studyRoom/collection/collection.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <!-- <diamond/> -->
+    </view>
+  </view>
+  <!-- 科目 -->
+  <view class="select-subject">
+    <scroll-view class='subject-list-box' scroll-y scroll-with-animation bindscrolltolower="addData" bindscrolltoupper="">
+      <view wx:for="{{questionList}}" wx:key="{{index}}">
+        <view class="question-list  bg-7BC6CC" data-id='{{item.examine_id}}' bindtap='goExam' data-type='{{item.type}}'>
+          <view class='question-left'>
+            <view class='question-name  {{item.color}} fsz-16' bindtap='clickName' data-id='{{item.id}}' data-index="{{index}}">{{item.name}}</view>
+            <view class='question-name margin-t8  {{item.color}} fsz-12'>{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="pos-continue">
+    <image src='http://student.ryit.co/student/wechat/image/assets/jianbian.png' class="jianbian"></image>
+  </view>
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{webUrl}}" wx:if="{{webUrl}}"></web-view>

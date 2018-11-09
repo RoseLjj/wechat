@@ -1,0 +1,38 @@
+/* pages/studyRoom/collection/collection.wxss */
+@import '../../../common/common.wxss';
+@import '../../../components/component.wxss';
+
+.select-subject{
+  margin-top:80rpx;
+}
+.subject-list-box{
+  height: 820rpx;
+}
+
+.question-list{
+  display: flex;
+  flex-direction: row;
+  padding:24rpx 28rpx;
+  margin-bottom: 16rpx;
+}
+
+.question-left{
+  text-align: left;
+  flex:1;
+}
+
+.question-right{
+  width: 150rpx;
+  text-align: right;
+  flex:none;
+}
+
+.reportImage{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 16rpx;
+}
+
+.jianbian{
+  bottom:11rpx;
+}

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "money": "/components/money/money",
+    "diamond": "/components/diamond/diamond",
+    "mistakes": "/components/mistakes/mistakes",
+    "subject": "/components/subject/subject",
+    "goback": "/components/goback/goback",
+    "portrait": "/components/portrait/portrait",
+    "background": "/components/background/background",
+    "questionsType": "/components/questionsType/questionsType",
+    "subsubjects":"/components/subsubjects/subsubjects",
+    "questionList": "/components/questionList/questionList"
+  }
+}

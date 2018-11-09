@@ -1,0 +1,46 @@
+<!--pages/practice/correct/correct.wxml-->
+<!-- 主题内容 -->
+<view class='backgroundAll bg-7BC6CC'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+  <!-- 错题集 -->
+  <comprehensive/>
+  <!-- 科目 -->
+  <view class='display-ib margin-t16'>
+    <view class="question-name fsz-14 bgc-FFF7DD color-1ADAAF ">9/5雅思-听力（2-10）</view>
+    <view class="correct-box bgc-FFECB1">
+      <view class='bgc-FFF7DD'>
+        <view class='color-1ADAAF fw-700 fsz-26 corate'>正确率: 80%</view>
+      </view>
+    </view>
+  </view>
+  <view class="margin-t16 tiList">
+    <view class='text-a-left margin-l20'>
+      <view class="rightBox fsz-12 marigin-r10 clearfix">
+        <view class="rightFang fl bgc-1ADAAF display-ib"></view>
+        <view class='display-ib fr color-1ADAAF'>正确</view>
+      </view>
+      <view class="rightBox fsz-12 clearfix">
+        <view class="rightFang fl bgc-FF7474 display-ib"></view>
+        <view class='display-ib fr color-FF7474'>错误</view>
+      </view>
+    </view>
+    <scroll-view class='text-a-left margin-l20 margin-t16 fsz-16 right-list' scroll-y scroll-with-animation>
+      <view class='display-ib width-40 height-40 tihao text-a-center' wx:for="{{numArr}}">
+        <view class="color-white {{item.bgc}}">{{item.num}}</view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+  </view>
+</view>

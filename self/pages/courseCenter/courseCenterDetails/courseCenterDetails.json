@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "money": "/components/money/money",
+    "diamond": "/components/diamond/diamond",
+    "goback": "/components/goback/goback",
+    "background": "/components/background/background"
+  }
+}

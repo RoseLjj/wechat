@@ -1,0 +1,91 @@
+/* pages/courseCenter/courseList/courseList.wxss */
+
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+.list{
+  height: 1032rpx;
+  overflow-y: auto;
+  /* margin-top: 8rpx; */
+}
+
+.listView{
+  background-color: #fff;
+  height: 152rpx;
+  margin: 20rpx 24rpx 0rpx 24rpx;  
+}
+
+.titleView{
+  margin-left: 24rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.title{
+  margin-top:  16rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #384A46;
+}
+
+.chooseTypeView{
+  margin-top: 8rpx;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 34rpx;
+}
+.chooseType1{
+  padding: 0rpx 16rpx 0rpx 16rpx;
+  background: #1ADAAF;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-left: 24rpx;
+}
+
+.chooseType2{
+  padding: 0rpx 16rpx 0rpx 16rpx;
+  background: #F8CD4B;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-left: 8rpx;
+}
+
+.moneyView{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rpx;
+  width: 100%;
+  height: 34rpx;
+  
+}
+.moneyViewItem{
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #f68314;
+  float: left;
+  width:33%;
+}
+.textLeft{
+  margin-left: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #F68314;
+}
+
+.textCenter{
+  margin-left: 96rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #F68314;
+}
+
+.textRight{
+  margin-left: 96rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #F68314;
+}

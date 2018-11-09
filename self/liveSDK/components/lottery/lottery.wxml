@@ -1,0 +1,42 @@
+<!--components/lottery/lottery.wxml-->
+<cover-view class="hover" hidden="{{!isShowLottery}}"></cover-view>
+
+<cover-view class="lottery" hidden="{{!isShowLottery}}">
+	<cover-view class="lottery-title">
+		<cover-view class="tit-text">抽奖</cover-view>
+		<cover-image class="tit-image" src="../../assets/icons/close.png" bindtap="hideLottery"/>
+	</cover-view>
+
+	<!-- 抽奖 -->
+	<cover-view class="lottery-main" wx:if="{{currentState==0}}">
+		<cover-image class="lot-bgimg" animation="{{animationBgimg}}" src="../../assets/icons/lottery-image.png"></cover-image>
+		<cover-image class="lot-box" src="../../assets/icons/lottery-box.png"></cover-image>
+		<cover-view class="lot-inbox">
+			<cover-image class="lot-mvimg" animation="{{animationMove}}" src="../../assets/icons/lottery-move.png"></cover-image>
+		</cover-view>
+	</cover-view>
+
+	<!-- 抽奖结果 -->
+	<!-- <cover-view class="lottery-final" wx:if="{{currentState==1 || currentState==2}}">
+		<cover-view class="notText" wx:if="{{currentState==2}}">您错过了一个亿~</cover-view>
+		<cover-view class="notText" wx:if="{{currentState==1}}">恭喜您中奖了~</cover-view>
+		<cover-view class="awardNames">
+			<cover-view class="lookText" bindtap="checkNames">查看中奖名单</cover-view>
+			<cover-image class="lookNames" src="../../assets/icons/allNames.png"></cover-image>
+		</cover-view>
+	</cover-view> -->
+
+	<!-- 抽奖中止 -->
+	<cover-view class="lottery-final" wx:if="{{currentState==1}}">
+		<cover-view class="notText">哎哟，本次抽奖被中止</cover-view>
+	</cover-view>
+
+
+	<!-- 中奖名单 -->
+	<cover-view class="lottery-names" wx:if="{{currentState==2}}">
+		<!-- <cover-image class="names-bgimg" src="../../assets/icons/awardBg.png"></cover-image> -->
+		<cover-view wx:for="{{wardNames}}" class="names-item">{{item}}</cover-view>
+	</cover-view>
+
+</cover-view>
+

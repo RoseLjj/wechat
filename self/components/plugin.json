@@ -1,0 +1,6 @@
+{
+  "publicComponents": {
+    "money": "components/money/money"
+  },
+  "pages": {}
+}

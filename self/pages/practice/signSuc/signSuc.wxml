@@ -1,0 +1,36 @@
+<!--pages/practice/signSuc/signSuc.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+  <!-- 报名 -->
+  <view class="select-subject">
+    <view class="suc-info-box">
+      <image class="success" src="http://student.ryit.co/student/wechat/image/assets/chenggong@3x.png"></image>
+      <view class='color-1ADAAF fsz-26 display-ib suc-info'>报名成功</view>
+    </view>
+    <view class="teacher-info">
+      稍后会有老师与您联系，确认口语考试时间
+      祝您考试顺利！
+    </view>
+    <view class="fanhui">
+      <button>返回</button>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

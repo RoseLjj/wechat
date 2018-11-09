@@ -1,0 +1,174 @@
+/* pages/practice/userInfo/userInfo.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+/*radio默认样式重置*/
+
+.attr_value {
+  float: left;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+/*radio默认样式重置*/
+
+.attr_value {
+  float: left;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.radio_label {
+  display: block;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-left: 56rpx;
+}
+
+radio {
+  box-sizing: border-box;
+  background: none;
+  border-color: #be93c5;
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+radio .wx-radio-input {
+  margin-right: 15rpx;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: none;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  background-color: transparent;
+  border-color: #be93c5;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: '';
+  font-family: "iconfont" !important;
+  font-size: 30rpx;
+  color: #ff2150;
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -14rpx;
+  margin-top: -14rpx;
+  border-radius: 0;
+  background-color: #1adaaf;
+  transform: translate(0, 0) scale(1);
+  -webkit-transform: translate(0, 0) scale(1);
+}
+
+/*radio默认样式重置*/
+
+.select-subject {
+  background-image: linear-gradient(-179deg, #f3c6ea 0%, #a0a1d3 100%);
+}
+
+.bgc-jb{
+  width:710rpx;
+  height: 64rpx;
+  background-image: linear-gradient(-180deg, #A0A1D3 0%, rgba(160,161,211,0) 100%);
+}
+
+form {
+  display: inline-block;
+}
+
+form .section {
+  margin-bottom: 16rpx;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 2rpx;
+}
+
+form .section .group .attr_value:last-of-type {
+  margin-left: 30rpx;
+}
+
+form .section input {
+  width: 678rpx;
+  height: 88rpx;
+  background: #fff;
+  border: 1px solid #be93c5;
+  font-size: 32rpx;
+  color: #384a46;
+}
+
+form .isRadio {
+  margin-top: 20rpx;
+}
+
+form .section .input-placeholder {
+  color: #c6c6c6;
+}
+
+form .tui-picker-content {
+  width: 678rpx;
+  height: 88rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+form .tui-picker-content picker view {
+  line-height: 88rpx;
+  position: relative;
+}
+
+form .tui-picker-detail::after {
+  content: '';
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20rpx 20rpx 0 20rpx;
+  border-color: #be93c5 transparent transparent transparent;
+}
+
+.test-rule {
+  display: inline-block;
+  text-align: left;
+  width: 678rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #be93c5;
+  box-sizing: border-box;
+  line-height: 38rpx;
+}
+
+.btn-area{
+  margin-top: 20rpx;
+}
+
+.btn-area button {
+  width: 670rpx;
+  height: 96rpx;
+  background: #1adaaf;
+  border-radius: 100px;
+  line-height: 96rpx;
+  color:#fff;
+}

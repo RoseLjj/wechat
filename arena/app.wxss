@@ -1,0 +1,257 @@
+/**app.wxss**/
+
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+@import "/common/common.wxss";
+
+page {
+  padding-top: 160rpx;
+  overflow: hidden;
+}
+
+/* 背景图片 */
+
+.arena-backgroundImg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.arena-backgroundImg image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 四叶草 */
+
+.arena-clover {
+  position: fixed;
+  top: 60rpx;
+  left: 50rpx;
+}
+
+.arena-clover .arena-clover-img {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #1adaaf;
+  position: relative;
+  display: inline-block;
+}
+
+.arena-clover .arena-clover-img image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20rpx;
+  margin-top: -20rpx;
+}
+
+.arena-clover-number {
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  vertical-align: top;
+  font-size: 24rpx;
+  color: #1adaaf;
+  padding: 0 60rpx 0 10rpx;
+  margin-left: 2rpx;
+}
+
+/* 我的战绩 */
+
+.arena-my-result {
+  display: inline-block;
+  width: 710rpx;
+  height: 160rpx;
+  padding: 32rpx 0 32rpx 16rpx;
+  background: #720a45;
+}
+
+.arena-my-portrait {
+  position: relative;
+}
+
+.arena-my-portrait view {
+  position: absolute;
+  top: -8rpx;
+  padding: 0 10rpx;
+  color:#fff;
+  display: inline-block;
+  font-size: 28rpx;
+}
+
+.arena-paiming1 {
+  background: #1adaaf;
+}
+
+.arena-paiming2 {
+  background: #720a45;
+}
+
+.arena-my-portrait image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.arena-my-info {
+  font-size: 28rpx;
+  color: #fff;
+  margin-left: 12rpx;
+}
+
+.arena-sex {
+  width: 36rpx;
+  height: 36rpx;
+  position: relative;
+  top: 6rpx;
+  left: 6rpx;
+}
+
+.arena-my-comment {
+  text-align: left;
+  margin-top: 12rpx;
+}
+
+.arena-my-comment view {
+  display: inline-block;
+  background: #f8cd4b;
+  padding: 0 8rpx;
+}
+
+.arena-my-honer1 {
+  font-size: 20rpx;
+  color: #fff;
+}
+
+.arena-my-honer2 {
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.arena-my-honer3 {
+  font-size: 22rpx;
+  color: #ff7474;
+}
+
+.arena-my-honer4 {
+  background: #ff7474;
+  width: 80rpx;
+  height: 112rpx;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 112rpx;
+  position: relative;
+  top: -8rpx;
+}
+
+.arena-my-result-bgc {
+  background-image: linear-gradient(-179deg, #e56168 0%, #9f3b56 100%);
+  padding: 32rpx 16rpx;
+}
+
+.arena-my-honer5 {
+}
+
+.arena-my-honer5 image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+/* 列表 */
+
+.arena-list-box {
+  text-align: center;
+}
+
+.arena-list {
+  width: 710rpx;
+  display: inline-block;
+  height: 800rpx;
+  background-image: linear-gradient(0deg, #63264f 0%, #ff9491 100%);
+  padding: 20rpx 0;
+}
+
+.arena-list-bottom {
+  display: inline-block;
+  width: 710rpx;
+}
+
+.arena-list-bottom image {
+  width: 100%;
+  height: 64rpx;
+}
+
+.arena-list-one {
+  height: 240rpx;
+  background-size: 100% 100%;
+  padding: 18rpx 18rpx 18rpx 32rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.arena-list-one .fr image {
+  width: 210rpx;
+  height: 204rpx;
+}
+
+.arena-game-one1 {
+  font-size: 40rpx;
+  color: #720a45;
+  margin-top: 20rpx;
+  margin-bottom: 6rpx;
+}
+
+.arena-game-one2 {
+  font-size: 24rpx;
+  color: #720a45;
+}
+
+.arena-game-one3 {
+  
+  height: 56rpx;
+  background: #ff7474;
+  text-align: center;
+  line-height: 56rpx;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.arena-list-wu .arena-game-one1, .arena-list-wu .arena-game-one2 {
+  color: #c6c6c6;
+}
+
+.arena-list-wu .arena-game-one3 {
+  background: #c6c6c6;
+}
+
+/* 底部 */
+
+.arena-footer {
+  position: fixed;
+  bottom: 56rpx;
+  width: 100%;
+  padding: 0 28rpx;
+}
+
+.arena-bottom-btn{
+  display: inline-block;
+}
+
+.arena-footer view image {
+  width: 100rpx;
+  height: 80rpx;
+}

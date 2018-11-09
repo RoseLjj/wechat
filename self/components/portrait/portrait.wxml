@@ -1,0 +1,4 @@
+<!--components/portrait/portrait.wxml-->
+<view class="user-pic">
+  <image src='../../image/icon/touxiang@2x.png'></image>
+</view>

@@ -1,0 +1,267 @@
+<!--pages/taskRank/rankList/rankList.wxml-->
+<!-- 背景图片 -->
+<view>
+  <image class="backgroundImage"></image>
+</view>
+
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+
+  <!-- 顶部bar -->
+  <view class='title_bar_parent'>
+    <block wx:for="{{buttonTitles}}" wx:key="{{item}}">
+    <view  class='buttonView {{buttonSelected==index?"selectButton":""}}' bindtap='buttonChange' id='{{index}}'>{{item}}</view>
+    </block>
+  </view>
+
+
+
+  <view class='parent_view'>
+
+    <!-- 榜单列表 -->
+    <scroll-view class='rank_list_parent' scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower">
+      <!-- 成绩榜单 -->
+      <block wx:for="{{userRankData.list}}" wx:if='{{buttonSelected==0}}'>
+
+        <!-- 榜单 -->
+        <view class='rank_item_parent'>
+
+          <view class='horizontal'>
+
+            <!-- 榜单icon -->
+            <view class='rank_bottom_icon_parent'>
+              <view class='rank_number'>{{item.rank}}</view>
+              <image class='rank_bottom_icon' src='{{item.head_avatar}}'></image>
+            </view>
+
+            <view class='vertical_margin_left_12 vertical '>
+              <view class='name_384A46'>{{item.nickname}}</view>
+              <view class='grand'>{{item.user_title}}</view>
+            </view>
+          </view>
+
+          <view class='vertical_margin_right_28 vertical'>
+            <view class='right_rate'>{{item.right_rate}}%</view>
+            <view class='horizontal'>
+              <view class='total_time'>{{item.total_time}} / </view>
+              <view class='zhengquelu'>正确率</view>
+            </view>
+          </view>
+
+        </view>
+
+
+      </block>
+      <!-- 活跃榜单 -->
+      <block wx:for="{{userRankData.list}}" wx:if='{{buttonSelected==1}}'>
+
+        <!-- 榜单 -->
+        <view class='rank_item_parent'>
+
+          <view class='horizontal'>
+
+            <!-- 榜单icon -->
+            <view class='rank_bottom_icon_parent'>
+              <view class='rank_number'>{{item.rank}}</view>
+              <image class='rank_bottom_icon' src='{{item.head_avatar}}'></image>
+            </view>
+
+            <view class='vertical_margin_left_12 vertical '>
+              <view class='name_384A46'>{{item.nickname}}</view>
+              <view class='grand'>{{item.user_title}}</view>
+            </view>
+          </view>
+
+          <view class='vertical_margin_right_28 vertical'>
+            <view class='active_green'>活跃点</view>
+            <view class='active_number_green'>{{item.active_score}}</view>
+          </view>
+
+        </view>
+
+
+      </block>
+      <!-- 竞技榜单 -->
+      <block wx:for="{{userRankData.list}}" wx:if='{{buttonSelected==2}}'>
+
+        <!-- 榜单 -->
+        <view class='rank_item_parent'>
+
+          <view class='horizontal'>
+
+            <!-- 榜单icon -->
+            <view class='rank_bottom_icon_parent'>
+              <view class='rank_number'>{{item.rank}}</view>
+              <image class='rank_bottom_icon' src='{{item.head_avatar}}'></image>
+            </view>
+
+            <view class='vertical_margin_left_12 vertical '>
+              <view class='name_384A46'>{{item.nickname}}</view>
+              <view class='grand'>{{item.user_title}}</view>
+            </view>
+          </view>
+
+          <view class='horizontal'>
+
+            <view class='vertical_margin_right_16 vertical'>
+              <view class='zhengquelu_number'>{{item.win_rate}}%</view>
+              <view class='zhengquelu'>胜率</view>
+            </view>
+            <image class='vertical_view'></image>
+
+            <view class='vertical_margin_left_17_right_20 vertical'>
+              <view class='mean_time'>平均用时 {{item.mean_time}}</view>
+              <view class='mean_time'>打败{{item.overcome_people}}人</view>
+            </view>
+          </view>
+
+        </view>
+
+
+      </block>
+
+
+
+    </scroll-view>
+
+
+    <!-- 成绩底部榜单 -->
+    <view class='rank_bottom_parent' wx:if='{{buttonSelected==0}}'>
+
+      <view class='horizontal'>
+        <!-- 底部榜单icon -->
+        <view class='rank_bottom_icon_parent'>
+          <view class='rank_bottom_number'>{{userRankData.my_rank}}</view>
+          <image class='rank_bottom_icon' src='{{userRankData.my_head_avatar}}'></image>
+        </view>
+        <view class='vertical_margin_left_12 vertical '>
+          <view class='name'>{{userRankData.my_nickname}}</view>
+          <view class='grand'>{{userRankData.my_user_title}}</view>
+        </view>
+      </view>
+
+      <view class='vertical_margin_right_28 vertical'>
+        <view class='right_rate_white right_rate'>{{userRankData.right_rate}}%</view>
+        <view class='horizontal'>
+          <view class='total_time_white total_time'>{{userRankData.total_time}} / </view>
+          <view class='zhengquelu_white zhengquelu'>正确率</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 活跃底部榜单 -->
+    <view class='rank_bottom_parent' wx:if='{{buttonSelected==1}}'>
+
+      <view class='horizontal'>
+        <!-- 底部榜单icon -->
+        <view class='rank_bottom_icon_parent'>
+          <view class='rank_bottom_number'>{{userRankData.my_rank}}</view>
+          <image class='rank_bottom_icon' src='{{userRankData.my_head_avatar}}'></image>
+        </view>
+        <view class='vertical_margin_left_12 vertical '>
+          <view class='name'>{{userRankData.nickname}}</view>
+          <view class='grand'>{{userRankData.my_user_title}}</view>
+        </view>
+      </view>
+
+      <view class='vertical_margin_right_28 vertical'>
+        <view class='active_white'>活跃点</view>
+        <view class='active_number_white'>{{userRankData.active_score}}</view>
+      </view>
+    </view>
+
+    <!-- 竞技底部榜单 -->
+    <view class='rank_bottom_parent' wx:if='{{buttonSelected==2}}'>
+
+      <view class='horizontal'>
+        <!-- 底部榜单icon -->
+        <view class='rank_bottom_icon_parent'>
+          <view class='rank_bottom_number'>{{userRankData.my_rank}}</view>
+          <image class='rank_bottom_icon' src='{{userRankData.my_head_avatar}}'></image>
+        </view>
+        <view class='vertical_margin_left_12 vertical '>
+          <view class='name'>{{userRankData.my_nickname}}</view>
+          <view class='grand'>{{userRankData.my_user_title}}</view>
+        </view>
+      </view>
+
+      <view class='horizontal'>
+
+        <view class='vertical_margin_right_16 vertical'>
+          <view class='zhengquelu_number_white zhengquelu_number'>{{userRankData.win_rate}}%</view>
+          <view class='zhengquelu_white zhengquelu'>胜率</view>
+        </view>
+        <image class='vertical_view_white vertical_view'></image>
+
+        <view class='vertical_margin_left_17_right_20 vertical'>
+          <view class='mean_time_white mean_time'>平均用时 {{userRankData.mean_time}}</view>
+          <view class='mean_time_white mean_time'>打败{{userRankData.overcome_people}}人</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+
+<!-- 领奖弹框 -->
+<view class='rankAwardBgView' hidden='{{lingjiangflage==1? false:true}}'>
+  <view class='rankAwardView'>
+    <view class='awardImageView'>
+      <image class='award' src='../../../image/icon/Artboard@2x.png'></image>
+    </view>
+    <view class='awardContentView'>
+      <view class='paimingView'>上周排名
+        <text class='paiming'>{{mReceiveList.last_week_rank}}</text>
+      </view>
+      <view class='infoView'>
+        <view class='infoView1'>
+          <image class='touxiang' src='{{userRankData.my_head_avatar}}'></image>
+          <view class='userName'>{{userRankData.my_nickname}}</view>
+        </view>
+        <view class='lineView'></view>
+        <view class='infoView2 shenglvView'>
+          <view class='leftLabel'>胜率</view>
+          <view class='rightLabel shenglv'>56%</view>
+        </view>
+        <view class='infoView2'>
+          <view class='leftLabel'>平均用时</view>
+          <view class='rightLabel'>1234min</view>
+        </view>
+        <view class='infoView2'>
+          <view class='leftLabel'>打败</view>
+          <view class='rightLabel'>1234人</view>
+        </view>
+      </view>
+      <view class='prizeView'>
+        <view>获得奖励</view>
+        <view class='prizeInfoView'>
+          <image class='zuanshi' src='../../../image/icon/zuanshi1@2x.png'></image>
+          <text class='zuanshiNumber'>200</text>
+        </view>
+      </view>
+    </view>
+    <view class='lingqu' bindtap='lingjiangClick'>
+      <view class='lingjiangtext'>领取</view>
+    </view>
+
+  </view>
+
+</view>

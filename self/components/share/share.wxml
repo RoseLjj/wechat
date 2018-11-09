@@ -1,0 +1,4 @@
+<!--components/share/share.wxml-->
+<view class="go-back">
+  <image src='../../image/icon/fenxiang@2x.png'></image>
+</view>

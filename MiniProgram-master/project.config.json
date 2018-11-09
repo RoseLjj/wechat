@@ -1,0 +1,17 @@
+{
+	"client": "wxlite/",
+	"svr": "server/",
+	"miniprogramRoot": "wxlite/",
+	"qcloudRoot": "server/",
+	"appid": "wxef786f038ea5126a",
+	"projectname": "rtcroom",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"libVersion": "1.9.91",
+	"condition": {}
+}

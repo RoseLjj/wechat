@@ -1,0 +1,36 @@
+<!--pages/courseCenter/chooseType/chooseType.wxml-->
+
+
+<view class='background'>
+  <!-- 标题 -->
+  <view class='navView'>
+    <text class='titleLabel'>选课中心</text>
+  </view>
+
+  <view class='topView'>
+    <text class='topTitle'>{{textTitle}}</text>
+  </view>
+
+  <view class='titleType'>
+    <text class='titleTypeName'>{{titleTypeName}}</text>
+  </view>
+  <view class='courseList'>
+    <block wx:for="{{courseTypeList}}" wx:key="{{item}}">
+      <view class='courseTypeName {{buttonSelectIndex[index]?"select":""}} {{buttonSelectDanxuanIndex==index?"select":""}}' data-index='{{index}}' bindtap='courseTypeAction'>{{item}}</view>
+    </block>
+  </view>
+
+
+  <view class='next' hidden='{{xuanzheType==1?true:false}}' bindtap='nextAction'>下一步</view>
+
+    <!-- 底部 -->
+    <view class='foot'>
+      <!-- 返回 -->
+      <goback steps='{{steps}}' type="1" bindnumChange="numChange"></goback>
+    </view>
+</view>
+
+
+
+
+

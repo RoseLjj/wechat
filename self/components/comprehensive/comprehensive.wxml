@@ -1,0 +1,4 @@
+<!--components/comprehensive/comprehensive.wxml-->
+<view class='mistakes-question'>
+  <button >综合评分</button>
+</view>

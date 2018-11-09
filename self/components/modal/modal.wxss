@@ -1,0 +1,98 @@
+/* components/modal/modal.wxss */
+
+/* 弹框 */
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #2c2;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 590rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin-left: -295rpx;
+  margin-top: -250rpx;
+  padding-bottom: 260rpx;
+}
+
+.modal-dialog .modal-tips {
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -96rpx;
+  margin-top: -96rpx;
+  background: #1adaaf;
+}
+
+.modal-dialog .modal-tips image {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -35rpx;
+  margin-top: -35rpx;
+}
+
+.modal-close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 0;
+  margin-top: -30rpx;
+}
+
+.modal-content {
+  padding: 50rpx 0 30rpx 0;
+}
+
+.modal-title {
+  text-align: center;
+  margin-top: 120rpx;
+  font-size: 32rpx;
+  color: #384a46;
+  padding: 0 40rpx;
+}
+
+.modal-footer {
+  font-size: 34rpx;
+  line-height: 86rpx;
+  position: absolute;
+  bottom: 0;
+  margin-left: -25rpx;
+  min-height:200rpx;
+}
+
+.btn-cancel {
+  width: 100%;
+  font-size: 26rpx;
+  color: #c6c6c6;
+  text-align: center;
+}
+
+.btn-confirm {
+  width: 640rpx;
+  text-align: center;
+  background: #1adaaf;
+  height: 96rpx;
+  color: #fff;
+}

@@ -1,0 +1,27 @@
+<!--pages/courseCenter/chooseSubject/chooseSubject.wxml-->
+
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+  </view>
+  <!-- 报名 -->
+  <view class="select-subject">
+    <view class="suc-info-box">
+      <block wx:for="{{chooseSubject}}" wx:key="{{item}}">
+        <view class='chooseSubject' bindtap='chooseSubjectAction' data-index='{{item.id}}' >{{item.name}}</view>
+      </block>
+    </view>  
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+  </view>
+</view>
+

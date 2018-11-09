@@ -1,0 +1,189 @@
+/* pages/courseCenter/courseCenterDetails/courseCenterDetails.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+
+/* 标题按钮 */
+
+.courseName {
+  background-color: #fff;
+  height: 88rpx;
+  margin: 24rpx 24rpx 2rpx 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageJiantouView {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imagejiantou {
+  margin-top: -86rpx;
+  width: 28rpx;
+  height: 16rpx;
+  margin-right: 52rpx;
+}
+
+.xianshang {
+  width: 100%;
+  height: 2rpx;
+  background: #fff;
+  margin: 0rpx 24rpx 0rpx 24rpx;
+}
+
+.content {
+  position: relative;
+  margin-bottom: 16rpx;
+}
+
+.list {
+  position: absolute;
+  top: 92rpx;
+  width: 100%;
+  transition: heigth 1s;
+  height: 924rpx;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* 列表 */
+
+.listView {
+  background-color: #fff;
+  height: 152rpx;
+  margin: 0rpx 24rpx 0rpx 24rpx;
+}
+
+.listView:active {
+  background: #f0f0f0;
+}
+
+.titleView {
+  margin-left: 24rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* 标题 */
+
+.title {
+  margin-top: 16rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #384a46;
+}
+
+/* 雅思 课时*/
+
+.chooseTypeView {
+  margin-top: 8rpx;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 34rpx;
+}
+
+.chooseType1 {
+  padding: 0rpx 16rpx 0rpx 16rpx;
+  background: #1adaaf;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  margin-left: 24rpx;
+}
+
+.chooseType2 {
+  padding: 0rpx 16rpx 0rpx 16rpx;
+  background: #f8cd4b;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  margin-left: 8rpx;
+}
+
+/* 金额 */
+
+.moneyView {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rpx;
+  width: 100%;
+  height: 34rpx;
+}
+
+.moneyViewItem {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #f68314;
+  float: left;
+  width: 33%;
+}
+
+.xianxia {
+  height: 2rpx;
+  background: #f0f0f0;
+  margin: 0rpx 24rpx 0rpx 24rpx;
+}
+
+.detailsCourse {
+  background: #fff;
+  height: 584rpx;
+  margin: 0rpx 24rpx 0rpx 24rpx;
+  padding: 32rpx;
+}
+
+.detailsTitle {
+  text-align: left;
+  font-size: 32rpx;
+  color: #1adaaf;
+  margin-bottom: 24rpx;
+}
+
+.detailsItem {
+  text-align: left;
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+}
+
+.detailsCourse .moneyView .textLeft {
+  margin-left: -20rpx;
+}
+
+.introduction {
+  margin-top: 12rpx;
+  text-align: left;
+  color: #acacac;
+  font-size: 24rpx;
+}
+
+.price {
+  margin: 2rpx 24rpx 0rpx 24rpx;
+  text-align: left;
+  padding-left: 32rpx;
+  color: #ff7474;
+  height: 96rpx;
+  background: #fff;
+  line-height: 96rpx;
+  font-weight: 400;
+}
+
+.goToPay {
+  display: block;
+  margin: 24rpx 24rpx 0rpx 24rpx;
+  color: #fff;
+  background: #1adaaf;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 50rpx;
+}
+
+.chooseClass {
+  display: block;
+  color: #ff7474;
+  text-decoration: underline;
+  margin-top: 32rpx;
+  font-size: 28rpx;
+}

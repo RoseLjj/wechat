@@ -1,0 +1,120 @@
+<view class="qaMain">
+    <scroll-view wx:if="{{condition}}" class="noqa" style="height: {{lheight-50}}px" scroll-y='true' scroll-top="{{scrollTop}}">
+    	<view class="question-info" id="qa-box">
+
+            <view class="question-item" wx:key="*this" wx:for="{{showList}}" wx:if="{{item.unMove}}">
+                <!-- <view class="qa-title">
+                    <view wx:if="{{item.submitor}}" class="question-user">{{item.submitor}} 问</view>
+                    <view wx:elseif="{{item.questionowner}}" class="question-user">{{item.questionowner}} 问</view>
+                    <view class="question-time">{{item.time}}</view>
+                </view>
+
+                <view class="qa-main"><label class="voice-ans" hidden="{{!vioceAns}}">[语音已回复]</label></view> -->
+
+
+                <view class="qa-title">
+                    <view class="question-user" wx:if="{{item.reply}}">{{item.answerBy}} 回答 {{item.submitor}}</view>
+                    <view class="question-user" wx:elif="{{item.submitor}}">{{item.submitor}} 问</view>
+                    <view class="question-user" wx:else>{{item.questionowner}} 问</view>
+                    <view class="question-time">{{item.time}}</view>
+                </view>
+
+                <view class="qa-main" wx:if="{{item.reply}}">{{item.answer}}</view>
+                <view class="qa-main" wx:else>{{item.question}}<label wx:if="{{item.ansVoice==1}}" class="voice-ans">[已加入语音回复列表]</label><label wx:if="{{item.ansVoice==2}}" class="voice-ans">[语音回复中]</label><label wx:if="{{item.ansVoice==3}}" class="voice-ans">[语音已回复]</label></view>
+
+                <view class="qa-ask" wx:if="{{item.reply}}">
+                    <view class="ask-main" style="white-space: {{currentId=='3'?'':'nowrap'}}">{{item.submitor}} 问：{{item.question}}</view>
+                    <!-- <image src="{{currentId=='3'?upUrl:downUrl}}" class="ask-image" data-id="3" bindtap="_showAll"></image> -->
+                </view>
+            </view>
+
+
+    		<!-- 提问 -->
+    		<!-- <view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">我 问</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有哪些新模式?<label class="voice-ans">[语音已回复]</label></view>
+    		</view> -->
+
+    		<!-- 回答 -->
+    		<!-- <view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">老师 回答 we</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有haodlskdlfkjsdlkfjlsddflkjkkkkkkkkkkkkkkkkkkkflskdlfksjdlfkjlkj</view>
+    			<view class="qa-ask">
+    				<view class="ask-main" style="white-space: {{currentId=='3'?'':'nowrap'}}">we 问：离开家离开家了的历史看大家分厘卡圣诞节卢卡斯就得啦客服经理</view>
+    				<image src="{{currentId=='3'?upUrl:downUrl}}" class="ask-image" data-id="3" bindtap="_showAll"></image>
+				</view>
+    		</view>
+
+    		<view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">老师 回答 we</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有haodlskdlfkjsdlkfjlsddflkjkkkkkkkkkkkkkkkkkkkflskdlfksjdlfkjlkj</view>
+    			<view class="qa-ask">
+    				<view class="ask-main" style="white-space: {{currentId=='4'?'':'nowrap'}}">we 问：离开家离开家了的历史看大家分厘卡圣诞节卢卡斯就得啦客服经理</view>
+    				<image src="{{currentId=='4'?upUrl:downUrl}}" class="ask-image" data-id="4" bindtap="_showAll"></image>
+				</view>
+    		</view>
+
+    		<view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">老师 回答 we</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有haodlskdlfkjsdlkfjlsddflkjkkkkkkkkkkkkkkkkkkkflskdlfksjdlfkjlkj</view>
+    			<view class="qa-ask">
+    				<view class="ask-main" style="white-space: {{currentId=='0'?'':'nowrap'}}">we 问：离开家离开家了的历史看大家分厘卡圣诞节卢卡斯就得啦客服经理</view>
+    				<image src="{{currentId=='0'?upUrl:downUrl}}" class="ask-image" data-id="0" bindtap="_showAll"></image>
+				</view>
+    		</view>
+
+    		<view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">老师 回答 we</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有haodlskdlfkjsdlkfjlsddflkjkkkkkkkkkkkkkkkkkkkflskdlfksjdlfkjlkj</view>
+    			<view class="qa-ask">
+    				<view class="ask-main" style="white-space: {{currentId=='1'?'':'nowrap'}}">we 问：离开家离开家了的历史看大家分厘卡圣诞节卢卡斯就得啦客服经理</view>
+    				<image src="{{currentId=='1'?upUrl:downUrl}}" class="ask-image" data-id="1" bindtap="_showAll"></image>
+				</view>
+    		</view>
+
+    		<view class="question-item">
+    			<view class="qa-title">
+	    			<view class="question-user">老师 回答 we</view>
+	    			<view class="question-time">08:02:03</view>
+    			</view>
+    			<view class="qa-main">在线教育有haodlskdlfkjsdlkfjlsddflkjkkkkkkkkkkkkkkkkkkkflskdlfksjdlfkjlkj</view>
+    			<view class="qa-ask">
+    				<view class="ask-main" style="white-space: {{currentId=='2'?'':'nowrap'}}">we 问：离开家离开家了的历史看大家分厘卡圣诞节卢卡斯就得啦客服经理</view>
+    				<image src="{{currentId=='2'?upUrl:downUrl}}" class="ask-image" data-id="2" bindtap="_showAll"></image>
+				</view>
+    		</view> -->
+    	</view>
+
+    </scroll-view>
+    <!-- 没有文档 -->
+    <view wx:else class="noqa">
+    	<view class="noQa-img">
+            <image src="../../assets/images/noQa.png" class="noQa-img2"></image>
+        </view>
+        <text class="noQa-text">专家为你答疑解惑</text>
+    </view>
+
+    <view class="unchat" hidden="{{!showUnchat}}">{{unChatText}}</view>
+    <view class="chat-bot">
+        <view class="chat-user" bindtap="_onlyMe">
+            <image src="{{onlySelf}}" class="onlyMe"></image>
+        </view>
+        <input class="chat-input" bindinput="_inputIn" value="{{qaVal}}" cursor-spacing="12"></input>
+        <image class="chat-send" src="{{sendUrl}}" bindtap="_sendQa"></image>
+    </view>
+</view>

@@ -1,0 +1,53 @@
+<!--pages/practice/paperList/paperList.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+  <!-- 错题集 -->
+  <view class='mistakes-question'>
+    <button>综合评分</button>
+  </view>
+
+  <!-- 科目 -->
+  <view class="select-subject">
+    <scroll-view class='subject-list-box' scroll-y scroll-with-animation>
+      <view wx:for="{{questionList}}" wx:key="{{index}}">
+        <view class="question-list  {{item.bgc}}">
+          <view class='question-left'>
+            <view class='question-name  {{item.color}} fsz-16'>{{item.name}}</view>
+            <view class='question-name margin-t8  {{item.color}} fsz-12'>{{item.time}}</view>
+          </view>
+          <view class='question-right'>
+            <view class="report fsz-11" wx:if="{{item.report}}">
+              <image src="http://student.ryit.co/student/wechat/image/assets/wancheng.png" class="reportImage"></image>
+            </view>
+            <view class="report fsz-11" wx:if="{{!item.report}}">
+              <image src="http://student.ryit.co/student/wechat/image/assets/wancheng.png" class="reportImage"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="pos-continue">
+    <image src='http://student.ryit.co/student/wechat/image/assets/jianbian.png' class="jianbian"></image>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

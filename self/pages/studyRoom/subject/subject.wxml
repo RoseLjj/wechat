@@ -1,0 +1,46 @@
+<!--pages/subject/subject.wxml-->
+<!-- 背景图片 -->
+<background/>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <!-- <diamond/> -->
+    </view>
+  </view>
+  <!-- 错题集 -->
+  <mistakes/>
+  <!-- 科目 -->
+  <view>
+    <view class="select-subject">
+      <scroll-view class='subject-list-box' scroll-y scroll-with-animation>
+        <view class="subject-list" wx:for="{{subjectArr}}" wx:key="{{index}}" bindtap='queryItemClick' data-index="{{index}}">
+          <view class="left-tips fl list-tips bgc-red" wx:if="{{item.isNew}}">新增新题型</view>
+          <view class="left-tips fl list-tips bgc-red" wx:if="{{!item.isNew && item.num>0}}">新增{{item.num}}题</view>
+          <view class='subject-name'>{{item.name}}</view>
+          <view class="right-tips list-tips bgc-yellow fr" wx:if="{{item.isShi}}">这个最适合你哦~</view>
+        </view>
+      </scroll-view>
+      <view class="continue-questions"  wx:if="{{id}}">
+        <button bindtap='continueQues'>继续做题</button>
+      </view>
+    </view>
+    <view class="pos-continue">
+      <text wx:if="{{id}}">上次做到{{name}}</text>
+      <image src='http://student.ryit.co/student/wechat/image/assets/jianbian.png' class="jianbian"></image>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <portrait/>
+  </view>
+</view>
+<web-view src="{{webUrl}}" wx:if="{{webUrl}}"></web-view>

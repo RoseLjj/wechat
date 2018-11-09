@@ -1,0 +1,41 @@
+/* pages/practice/paperList/paperList.wxss */
+@import "../../../common/common.wxss";
+@import '../../../components/component.wxss';
+.select-subject{
+  background-image: linear-gradient(-179deg, #F3C6EA 0%, #A0A1D3 100%);
+}
+
+.subject-list-box{
+  height: 820rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+
+.question-list{
+  display: flex;
+  flex-direction: row;
+  padding:24rpx 28rpx;
+  margin-bottom: 16rpx;
+  
+}
+
+.question-left{
+  text-align: left;
+  flex:1;
+}
+
+.question-right{
+  width: 150rpx;
+  text-align: right;
+  flex:none;
+}
+
+.reportImage{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 16rpx;
+}
+
+.jianbian{
+  bottom:11rpx;
+}

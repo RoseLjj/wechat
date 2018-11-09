@@ -1,0 +1,101 @@
+<!--pages/friends/friends.wxml-->
+<!-- PK竞技场-好友列表 -->
+<view class="arena-backgroundImg">
+  <image src='{{bgcImg[0]}}'></image>
+</view>
+<!-- 四叶草 -->
+<clover cloverNumber="{{cloverNumber}}" />
+<!-- 我的战绩 -->
+
+<!-- 好友列表 -->
+<view class="arena-list-box">
+  <scroll-view scroll-y class="arena-list" scroll-with-animation bindscrolltolower="addData">
+    <view class='text-a-center arena-my-result-box' wx:for="{{friendsArr}}" wx:key="{{index}}">
+      <view class="arena-my-result arena-my-result-bgc">
+        <view class="arena-my-portrait fl">
+          <view wx:if="{{item.rank<=3}}" class="arena-paiming1">{{item.rank}}</view>
+          <view wx:if="{{item.rank>3}}" class="arena-paiming2">{{item.rank}}</view>
+          <image src="{{item.portrait}}"></image>
+        </view>
+        <view class="arena-my-info fl">
+          <view class="arena-my-name">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="arena-my-comment">
+            <view>{{item.label}}</view>
+          </view>
+        </view>
+        <view class="fr">
+          <view class="arena-my-honer5">
+            <image src='{{bgcImg[13]}}'></image>
+          </view>
+        </view>
+        <view class="fr text-a-right marigin-r10">
+          <view class="arena-my-honer1">荣誉积分</view>
+          <view class="arena-my-honer2">{{item.jifen}}</view>
+          <view class="arena-my-honer3">打败了{{item.win}}人</view>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+  <view class='arena-list-btn clearfix'>
+    <button class='fl arena-btn-wxF' bindtap='openPropBox' data-type="1">微信好友PK</button>
+    <button class='fr arena-btn-sjp' bindtap='openPropBox' data-type="2">随机匹配</button>
+  </view>
+  <view class="arena-list-bottom">
+    <image src="{{bgcImg[3]}}"></image>
+  </view>
+</view>
+
+<view class="arena-footer">
+  <goBack/>
+</view>
+
+
+<!--弹窗-->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-tips">
+    <view class='modal-tips1'>选择道具</view>
+    <!-- <view class='modal-tips2'>每局游戏每种道具最多选择3个</view> -->
+  </view>
+  <image class="modal-close" src='{{bgcImg[1]}}' bindtap='closePropBox'></image>
+  <scroll-view class="modal-content">
+    <view class='arena-prop-box clearfix' wx:for="{{propArr}}" wx:key="{{index}}">
+      <view class='fl position-r'>
+        <view class="arena-prop-num arena-prop-num1" wx:if="{{item.num<100}}">{{item.num}}</view>
+        <view class="arena-prop-num arena-prop-num2" wx:if="{{item.num>=100}}">{{item.num}}</view>
+        <view class="arena-prop-num arena-prop-num3" wx:if="{{item.num>=1000}}">{{item.num}}</view>
+        <view class="arena-prop-num arena-prop-num4" wx:if="{{item.num>=10000}}">{{item.num}}</view>
+        <image class="arena-prop-img1" src='{{item.img}}'></image>
+      </view>
+      <view class='fl'>
+        <image class="arena-prop-img2" src='{{bgcImg[15]}}'></image>
+        <view class="arena-prop-text1">× {{item.money}}</view>
+      </view>
+      <view class='fr'>
+        <image class="arena-prop-img3" data-index="{{index}}" bindtap='addProp' src='{{bgcImg[14]}}'></image>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">开始匹配</view>
+  </view>
+</view>
+
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal2}}"></view>
+<view class="modal-dialog wait-for-friends" wx:if="{{showModal2}}">
+  <view class="modal-tips">
+    <view class='modal-tips1'>等待好友进场</view>
+  </view>
+  <image class="modal-close" src='{{bgcImg[1]}}' bindtap='closePropBox'></image>
+  <view class="modal-content">
+    <view>
+      <image class="user-pic1 fl" src="{{bgcImg[12]}}"></image>
+      <image class="user-pic2" src="{{bgcImg[22]}}"></image>
+      <view class="user-pic3 fr">等待入场</view>
+      <!-- <image class="user-pic1 fr" src="{{bgcImg[12]}}"></image> -->
+    </view>
+  </view>
+</view>

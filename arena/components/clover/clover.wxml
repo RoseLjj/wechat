@@ -1,0 +1,8 @@
+<!--common/clover/clover.wxml-->
+<!-- 四叶草 -->
+<view class="arena-clover">
+  <view class="arena-clover-img">
+    <image src="{{bgcImg[2]}}"></image>
+  </view>
+  <view class="arena-clover-number">{{cloverNumber}}</view>
+</view>

@@ -1,0 +1,32 @@
+/* components/money/money.wxss */
+@import '../../common/common.wxss';
+@import "../component.wxss";
+
+/* 充值 */
+
+.myMoney .recharge-add {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -20rpx;
+  right: 10rpx;
+}
+
+.myMoney .siyecao {
+  background: #1adaaf;
+  width: 60rpx;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.myMoney text {
+  top:-3rpx;
+}
+
+.myMoney .recharge {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 8rpx;
+}

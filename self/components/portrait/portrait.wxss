@@ -1,0 +1,17 @@
+/* components/portrait/portrait.wxss */
+.user-pic{
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #1ADAAF;
+  border-radius: 50%;
+  position: absolute;
+  right:32rpx;
+  bottom:6rpx;
+}
+
+.user-pic image{
+  width: 86rpx;
+  height: 86rpx;
+  margin-left: 3rpx;
+  margin-top: 6rpx;
+}

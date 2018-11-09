@@ -1,0 +1,3 @@
+/* components/repractice/repractice.wxss */
+@import '../../common/common.wxss';
+@import '../component.wxss';

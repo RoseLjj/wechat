@@ -1,0 +1,5 @@
+<!--components/diamond/diamond.wxml-->
+<view class="myMoney my-diamond">
+    <image src='../../image/icon/zuanshi@2x.png' class="recharge"></image>
+    <text>1,931,236</text>
+  </view>

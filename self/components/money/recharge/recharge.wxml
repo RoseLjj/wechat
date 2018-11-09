@@ -1,0 +1,60 @@
+<!--pages/taskRank/recharge/recharge.wxml-->
+<!-- 背景图片 -->
+<view>
+  <image class="backgroundImage"></image>
+</view>
+<!-- 主题内容 -->
+<view class='backgroundAll'>
+
+  <view class="header clearfix">
+    <!-- 充值 -->
+    <view class="fl">
+      <money/>
+    </view>
+    <!-- 钻石 -->
+    <view class="fl">
+      <diamond/>
+    </view>
+  </view>
+
+  <view class='contentView'>
+    <!-- 头部按钮切换 -->
+    <view class='titleView'>账户充值</view>
+
+    <!-- 列表 -->
+    <view class='recharge-list-view'>
+      <scroll-view class='recharge-list-box' scroll-y scroll-with-animation>
+        <view class='recharge-list-item' wx:for='{{rechargeList}}' wx:key='{{item}}'>
+          <view class='itemTopview'>充值</view>
+          <view class='itemCenterView'>
+            <view class='itemLeftView'>
+              <image class='zuanshi' src='../../../image/icon/yuanbao1@2x.png'></image>
+              <text class='yuanbaoNumber'>60</text>
+              <image class='zuanshi' src='../../../image/icon/zuanshi1@2x.png'></image>
+              <text class='zuanshiNumber'>600</text>
+            </view>
+            <view class='itemRightView'>
+              <view class='buttonView'>￥6</view>
+            </view>
+          </view>
+          <view class='itemBottomView'>
+            <text class='zeng'>赠</text>
+            <image class='prize' wx:for="{{['1','2','1','2']}}" wx:key='{{item}}'></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+
+  <!-- 底部 -->
+  <view class='foot'>
+    <!-- 返回 -->
+    <goback/>
+    <!-- 头像 -->
+    <!-- <portrait/> -->
+  </view>
+</view>
+<web-view src="{{url}}" wx:if="{{webTrue}}"></web-view>

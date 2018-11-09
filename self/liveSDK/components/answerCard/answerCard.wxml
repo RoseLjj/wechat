@@ -1,0 +1,69 @@
+<!--components/answerCard/answerCard.wxml-->
+<cover-view class="hover" hidden="{{!isShowCard}}"></cover-view>
+
+<cover-view class="ans-card" hidden="{{!isShowCard}}">
+	<cover-view class="ans-title">
+		答题卡
+		<cover-image class="closeCard" hidden="{{isResult}}" src="../../assets/icons/closeCard.png" bindtap="changeAnscard"></cover-image>
+		<cover-image class="closeCard2" hidden="{{!isResult}}" src="../../assets/icons/close.png" bindtap="closeCard"></cover-image>
+	</cover-view>
+	<cover-view class="ans-subtit">{{subTitle}}<cover-view class="subRight">{{subRight}}</cover-view></cover-view>
+	<cover-view class="ans-main" hidden="{{isResult}}">
+		<!-- 单选 -->
+		<cover-view class="ans-choose" hidden="{{type==0?false:true}}">
+			<cover-view class="choose-item" wx:key="currentItem1" wx:for="{{currentItem0}}">
+				<cover-view class="item-view {{item.selected?'item-active':''}}" bindtap="chooseAns" data-id="{{item.id}}">{{item.content}}</cover-view>
+			</cover-view>
+			<!-- <cover-view class="choose-item">
+				<cover-view class="item-view" bindtap="chooseAns">A</cover-view>
+			</cover-view> -->
+		</cover-view>
+
+		<!-- 多选 -->
+		<cover-view class="ans-choose" hidden="{{type==1?false:true}}">
+			<cover-view class="choose-item" wx:key="currentItem1" wx:for="{{currentItem1}}">
+				<cover-view class="item-view" bindtap="chooseMulti" data-id="{{item.id}}">
+					{{item.content}}<cover-image class="item-multi" src="{{item.selected?multiUrl2:multiUrl}}"></cover-image>
+				</cover-view>
+			</cover-view>
+		</cover-view>
+
+		<!-- 判断 -->
+		<cover-view class="ans-choose" hidden="{{type==2?false:true}}">
+			<cover-view class="choose-item" wx:key="currentItem2" wx:for="{{currentItem2}}">
+				<cover-view class="item-view {{item.selected?'item-active':''}}" bindtap="chooseBoolean" data-id="{{item.id}}">
+					<cover-image class="item-judeg" src="{{item.id=='1'?judeg1:judeg2}}"></cover-image>
+				</cover-view>
+			</cover-view>
+		</cover-view>
+
+
+		<cover-view class="ans-submit" bindtap="submitCard">提交</cover-view>
+	</cover-view>
+
+	<cover-view class="ans-rusult" hidden="{{!isResult}}">
+
+		<cover-view class="result-item" wx:for="{{resultItem}}">
+			<cover-view hidden="{{!hasReal}}" class="res-sure {{item.correct=='true'?'res-sureBg':''}}">{{item.correct=='true'?'正确':''}}</cover-view>
+
+			<cover-view class="res-label">{{item.content}}</cover-view>
+			<cover-view class="res-main">
+				<cover-view class="res-out"><cover-view class="res-in" style="width: {{item.persent}}%;"></cover-view></cover-view>
+			</cover-view>
+			<cover-view class="res-num">{{item.total}}人</cover-view>
+			<cover-view class="res-percent">({{item.persent}}%)</cover-view>
+		</cover-view>
+
+		
+		<cover-view class="res-bottom res-right" wx:if="{{resultType==1}}">
+			<cover-image class="res-bottomImg" src="../../assets/icons/answerR.png"></cover-image>恭喜您，通过了测试
+		</cover-view>
+		<cover-view class="res-bottom res-fail" wx:if="{{resultType==2}}">
+			<cover-image class="res-bottomImg" src="../../assets/icons/answerW.png"></cover-image>不要灰心，再接再励
+		</cover-view>
+	</cover-view>
+</cover-view>
+
+<cover-image class="rightImage" src="../../assets/icons/showCard.png" hidden="{{!isShowRight}}" bindtap="changeAnscard"></cover-image>
+
+

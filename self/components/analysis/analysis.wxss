@@ -1,0 +1,3 @@
+/* components/analysis/analysis.wxss */
+@import '../../common/common.wxss';
+@import '../component.wxss';

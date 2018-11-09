@@ -1,0 +1,5 @@
+<!--components/analysis/analysis.wxml-->
+<view class="go-back">
+  <view class="repractice bgc-white fsz-16 color-1ADAAF fw-700">查看解析</view>
+</view>
+

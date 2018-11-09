@@ -1,0 +1,132 @@
+/* components/lottery/lottery.wxss */
+.lottery {
+	width: 540rpx;
+	height: 410rpx;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -205rpx;
+	margin-left: -270rpx;
+	z-index: 999;
+}
+.lottery-title {
+	height: 88rpx;
+	width: 100%;
+	background-color: #ffffff;
+	position: relative;
+}
+.tit-text {
+	line-height: 88rpx;
+	font-size: 28rpx;
+	color: #333333;
+	margin-left: 30rpx;
+	float: left;
+}
+.tit-image {
+	width: 26rpx;
+	height: 26rpx;
+	line-height: 26rpx;
+	position: absolute;
+	padding: 20rpx;
+	top: 10rpx;
+	right: 10rpx;
+}
+.lottery-main {
+	height: 320rpx;
+	background-color: #fee15d;
+	border-top: 2rpx solid #e7e7e7;
+	position: relative;
+}
+.lot-bgimg {
+	width: 430rpx;
+	height: 430rpx;
+	position: absolute;
+	top: -45rpx;
+	left: 55rpx;
+	transform: rotate(0deg);
+}
+.lot-box {
+	width: 400rpx;
+	height: 100rpx;
+	position: absolute;
+	left: 70rpx;
+	top: 110rpx;
+}
+.lot-inbox {
+	width: 400rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	position: absolute;
+	left: 70rpx;
+	top: 110rpx;
+	overflow: hidden;
+}
+.lot-mvimg {
+	width: 210rpx;
+	height: 60rpx;
+	margin-left: 94rpx;
+	margin-top: 20rpx;
+	transform: translateX(-200%);
+}
+.lottery-final {
+	height: 320rpx;
+	background-color: #ffffff;
+	border-top: 2rpx solid #e7e7e7;
+	position: relative;
+	text-align: center;
+}
+.notText {
+	line-height: 30rpx;
+	color: #666666;
+	font-size: 24rpx;
+	margin-top: 90rpx;
+}
+.awardNames {
+	line-height: 30rpx;
+	color: #0078d7;
+	font-size: 24rpx;
+	margin-top: 20rpx;
+}
+.lookText {
+	display: inline-block;
+	vertical-align:middle;
+}
+.lookNames {
+	width: 8rpx;
+	height: 16rpx;
+	vertical-align:middle;
+	display: inline-block;
+	margin-left: 4rpx;
+	margin-top:-2rpx;
+}
+.lottery-names {
+	height: 320rpx;
+	width: 540rpx;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-top: 2rpx solid #e7e7e7;
+	position: relative;
+	text-align: center;
+	background-color: #ffffff;
+}
+.names-item {
+	height: 60rpx;
+	line-height: 60rpx;
+	padding: 0 20rpx;
+	border-bottom: 2rpx solid #e7e7e7;
+	font-size: 22rpx;
+	color: #666;
+	background-color: #ffffff;
+}
+
+
+.hover {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	opacity: 0.5;
+	z-index: 100
+}

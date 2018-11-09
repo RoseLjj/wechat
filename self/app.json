@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/studyRoom/subject/subject",
+    "pages/studyRoom/subsubjects/subsubjects",
+    "pages/studyRoom/questionsType/questionsType",
+    "pages/studyRoom/questionsList/questionsList",
+    "pages/studyRoom/submission/submission",
+    "pages/studyRoom/composite/composite",
+    "pages/studyRoom/correctRate/correctRate",
+    "pages/studyRoom/collection/collection",
+    "pages/question/question",
+    "pages/practice/userInfo/userInfo",
+    "pages/practice/signup/signup",
+    "pages/practice/signSuc/signSuc",
+    "pages/practice/paperList/paperList",
+    "pages/practice/correct/correct",
+    "pages/classRoom/courseList/courseList",
+    "pages/classRoom/classLive/classLive",
+    "pages/courseCenter/chooseType/chooseType",
+    "pages/courseCenter/chooseSubject/chooseSubject",
+    "pages/courseCenter/courseList/courseList",
+    "pages/courseCenter/courseCenterDetails/courseCenterDetails",
+    "pages/taskRank/rankList/rankList",
+    "pages/taskRank/taskList/taskList",
+    "components/money/recharge/recharge",
+    "pages/courseCenter/chooseSub/chooseSub"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "光合",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}
